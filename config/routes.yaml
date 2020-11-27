@@ -1,0 +1,4 @@
+# Redirect to default route aka /fr/
+redirect:
+   path: /
+   controller: App\Controller\RedirectController::redirectToLocale
