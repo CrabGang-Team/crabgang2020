@@ -6,7 +6,11 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        <a onclick="Base.changeLocale('{{app.request.locale}}')">{{ app.request.locale == "fr" ? "english" | trans : "french" | trans }}</a>
+
         {% block body %}{% endblock %}
+
+        <script src="{{ asset('js/base.js') }}"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
