@@ -1,10 +1,11 @@
-/* NavBar */
+/* ! NavBar */
 .fixed-bg {
    box-shadow: 0px -2px 15px rgba(0, 0, 0, .3);
 }
 
 
-/* Home page */
+/* ! Home page */
+/* ? Jumbotron */
 .home-jumbotron {
    width: 100%;
    height: 60vh;
@@ -68,9 +69,12 @@
    font-size: 4.5rem;
 }
 
-
+/* ? Main section */
 #main {
    padding-top: 75px;
+}
+
+#main-title {
    display: flex;
    justify-content: center;
 }
@@ -89,8 +93,110 @@
    border-bottom: 4px solid rgb(25, 25, 25);
 }
 
+/* ? Cards */
+#cards {
+   margin-top: 80px;
+}
 
-/* Autres */
+.card-info {
+   border-radius: 10px;
+   border: 2px solid rgb(230, 230, 230);
+   overflow: hidden;
+   transition: .4s;
+}
+
+.design {
+   width: 100%;
+   height: 275px;
+   position: relative;
+   overflow: hidden;
+}
+
+
+/* ? Design 1 */
+.design .forme1-1 {
+   position: absolute;
+   width: 200px;
+   height: 200px;
+   background-color: rgb(122, 64, 148);
+   top: -40px;
+   right: -15px;
+   transition: .4s;
+}
+.design .forme2-1 {
+   position: absolute;
+   width: 150px;
+   height: 150px;
+   background: linear-gradient(270deg, rgb(220, 36, 48), rgba(220, 36, 48, .5));
+   top: 90px;
+   left: 0px;
+   transition: .4s;
+}
+.card-info:hover .design .forme1-1 {
+   top: -60px;
+   right: 0px;
+}
+.card-info:hover .design .forme2-1 {
+   top: 100px;
+   left: 30px;
+}
+
+/* ? Design 2*/
+.design .forme1-2 {
+   position: absolute;
+   width: 200px;
+   height: 220px;
+   background-color: rgb(220, 36, 48);
+   top: -40px;
+   right: -15px;
+   transition: .4s;
+}
+.design .forme2-2 {
+   position: absolute;
+   width: 230px;
+   height: 230px;
+   border-radius: 50%;
+   background: linear-gradient(270deg,  rgb(122, 64, 148),  rgba(122, 64, 148, .5));
+   top: -70px;
+   left: -50px;
+   transition: .4s;
+}
+.card-info:hover .design .forme1-2 {
+   top: 0px;
+   right: -25px;
+}
+.card-info:hover .design .forme2-2 {
+   top: -60px;
+   left: -70px
+}
+
+
+
+
+.card-info:hover {
+   box-shadow: 3px 3px 10px rgba(0, 0, 0, .2);
+   transition: .4s;
+}
+
+.card-text {
+   padding: 0 15px 15px 15px;
+}
+.card-text .skill {
+   text-align: center;
+   color: rgb(25, 25, 25);
+   font-size: 24px;
+   margin-bottom: 35px;
+}
+.card-text .skill-domain {
+   color: rgb(150, 150, 150);
+   font-size: 16px;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   font-weight: 600;
+}
+
+
+/* ! Autres */
 .auto-scroller {
    height: 200vh;
 }
