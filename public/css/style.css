@@ -64,10 +64,26 @@
 .jumbotron-down-arrow a {
    color: white;
 }
-
-
 .big-title {
    font-size: 4.5rem;
+}
+
+
+#main {
+   padding-top: 75px;
+}
+
+#main h1 {
+   text-align: center;
+   text-transform: uppercase;
+   font-weight: 400;
+}
+
+#main h1 #dominant {
+   background: rgb(25, 25, 25);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   border-bottom: 4px solid rgb(25, 25, 25);
 }
 
 
