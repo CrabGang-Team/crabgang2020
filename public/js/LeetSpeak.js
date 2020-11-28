@@ -29,20 +29,30 @@ LeetSpeak.dictionary = {
    Z: "Z"
 }
 
-LeetSpeak.activated = false;
+if(localStorage.getItem("leetSpeak-activated") == undefined) {
+   LeetSpeak.activated = false;
+   localStorage.setItem("leetSpeak-activated", LeetSpeak.activated)
+} else {
+   LeetSpeak.activated = localStorage.getItem("leetSpeak-activated")
+}
+
 LeetSpeak.backup = []
 
 document.addEventListener("DOMContentLoaded", () => {
-   if(!LeetSpeak.activated) {
-      let texts = document.querySelectorAll("[leet-speak]")
-      texts.forEach(el => {
-         LeetSpeak.backup.push(el.innerText)
-      })
-   }
+   let texts = document.querySelectorAll("[leet-speak]")
+   texts.forEach(el => {
+      LeetSpeak.backup.push(el.innerText)
+   })
+   LeetSpeak.start()
 })
 
 LeetSpeak.toggle = () => {
    LeetSpeak.activated = !LeetSpeak.activated
+   localStorage.setItem("leetSpeak-activated", LeetSpeak.activated)
+   LeetSpeak.start()
+}
+
+LeetSpeak.start = () => {
    let texts = document.querySelectorAll("[leet-speak]")
    if(LeetSpeak.activated) {
       texts.forEach(el => {
