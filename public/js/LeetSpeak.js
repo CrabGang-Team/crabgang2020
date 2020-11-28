@@ -29,6 +29,7 @@ LeetSpeak.dictionary = {
    Z: "Z"
 }
 
+// récupération de la clé "leetSpeak-activated" dans le localStorage
 if(localStorage.getItem("leetSpeak-activated") == undefined) {
    LeetSpeak.activated = false;
    localStorage.setItem("leetSpeak-activated", LeetSpeak.activated)
@@ -36,8 +37,10 @@ if(localStorage.getItem("leetSpeak-activated") == undefined) {
    LeetSpeak.activated = JSON.parse(localStorage.getItem("leetSpeak-activated")) // Pour convertir la string en bool
 }
 
+// initialisation de la liste des string d'origine
 LeetSpeak.backup = []
 
+// start leetSpeak lorsque la page est chargée s'il est activé
 document.addEventListener("DOMContentLoaded", () => {
    let texts = document.querySelectorAll("[leet-speak]")
    texts.forEach(el => {
@@ -46,12 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
    LeetSpeak.start()
 })
 
+// Change l'état du leetSpeak
 LeetSpeak.toggle = () => {
    LeetSpeak.activated = !LeetSpeak.activated
    localStorage.setItem("leetSpeak-activated", LeetSpeak.activated)
    LeetSpeak.start()
 }
 
+// Change dynamiquement le texte en leetSpeak
 LeetSpeak.start = () => {
    let texts = document.querySelectorAll("[leet-speak]")
    if(LeetSpeak.activated) {
