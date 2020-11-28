@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}{{ "navbar.items.home" | trans }}{% endblock %}
 
 {% block body %}
 
-{# <h1 align="center">{{ "home.title" | trans }}</h1>
+<div class="home-jumbotron gradient">
+</div>
 
-<a href="{{ path('articles') }}">{{ "articles.title" | trans }}</a> #}
+<div class="auto-scroller"></div>
 
 {% endblock %}

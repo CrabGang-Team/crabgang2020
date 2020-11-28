@@ -1,5 +1,6 @@
-home.title: "Accueil"
-articles.title: "Articles"
+language.english: "Anglais"
+language.french: "Français"
 
-english: "Anglais"
-french: "Français"
+navbar.items.home: "Accueil"
+navbar.items.features: "Fonctionnalités"
+

@@ -1,5 +1,5 @@
-home.title: "Home"
-articles.title: "Articles"
+language.english: "English"
+language.french: "French"
 
-english: "English"
-french: "French"
+navbar.items.home: "Home"
+navbar.items.features: "Features"

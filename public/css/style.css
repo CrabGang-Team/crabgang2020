@@ -1,0 +1,15 @@
+/* NavBar */
+.fixed-bg {
+   box-shadow: 0px -2px 15px rgba(0, 0, 0, .3);
+}
+
+
+/* Home page */
+.home-jumbotron {
+   width: 100%;
+   height: 60vh;
+}
+
+.auto-scroller {
+   height: 200vh;
+}
