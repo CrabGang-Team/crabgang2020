@@ -7,8 +7,8 @@
 <div class="home-jumbotron gradient">
 
    <div class="jumbotron-text">
-      <h1 class="big-title px-5">{{ "home.jumbotron.title" | trans }}</h1>
-      <p class="mt-5">{{ "home.jumbotron.description" | trans }}</p>
+      <h1 class="big-title px-5" leet-speak>{{ "home.jumbotron.title" | trans }}</h1>
+      <p class="mt-5" leet-speak>{{ "home.jumbotron.description" | trans }}</p>
    </div>
 
    <div class="mt-5 jumbotron-down-arrow">
@@ -20,7 +20,11 @@
 </div>
 
 <section id="main">
-   <h1 class="gradient-text">{{ "home.main.title.part1" | trans }} <span id="dominant">{{ "home.main.title.part2" | trans }}</span> {{ "home.main.title.part3" | trans }}</h1>
+   <div id="main-title">
+      <h1 class="gradient-text" leet-speak>{{ "home.main.title.part1" | trans }}</h1>
+      <h1 class="gradient-text"><span id="dominant" leet-speak>{{ "home.main.title.part2" | trans }}</span></h1>
+      <h1 class="gradient-text" leet-speak>{{ "home.main.title.part3" | trans }}</h1>
+   </div>
 </section>
 
 

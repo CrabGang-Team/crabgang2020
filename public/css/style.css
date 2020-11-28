@@ -71,9 +71,12 @@
 
 #main {
    padding-top: 75px;
+   display: flex;
+   justify-content: center;
 }
 
-#main h1 {
+#main-title h1 {
+   display: inline;
    text-align: center;
    text-transform: uppercase;
    font-weight: 400;
