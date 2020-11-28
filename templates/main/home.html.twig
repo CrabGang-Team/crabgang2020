@@ -5,7 +5,24 @@
 {% block body %}
 
 <div class="home-jumbotron gradient">
+
+   <div class="jumbotron-text">
+      <h1 class="big-title px-5">{{ "home.jumbotron.title" | trans }}</h1>
+      <p class="mt-5">{{ "home.jumbotron.description" | trans }}</p>
+   </div>
+
+   <div class="mt-5 jumbotron-down-arrow">
+      <h2 class="text-white">
+         <a href="#main"><i class="fas fa-chevron-down"></i></a>
+      </h2>
+   </div>
+
 </div>
+
+<section id="main">
+   <h1>We are <span class="text-primary">experts</span> in</h1>
+</section>
+
 
 <div class="auto-scroller"></div>
 

@@ -8,8 +8,70 @@
 .home-jumbotron {
    width: 100%;
    height: 60vh;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   justify-content: center;
+   align-items: center;
 }
 
+.jumbotron-text {
+   width: 60%;
+   height: 50%;
+   text-align: center;
+   color: white;
+}
+
+@keyframes jumbotron-down-arrow-animation {
+   0% {
+      transform: translateY(0px);
+   }
+   5% {
+      transform: translateY(15px);
+   }
+   10% {
+      transform: translateY(0px);
+   }
+   15% {
+      transform: translateY(15px);
+   }
+   20% {
+      transform: translateY(0px);
+   }
+   100% {
+      transform: translateY(0px);
+   }
+}
+
+.jumbotron-down-arrow {
+   display: flex;
+   cursor:pointer;
+   justify-content: center;
+   align-items: center;
+   padding-top: 7px;
+   border-radius: 50%;
+   width: 60px;
+   height: 60px;   
+   animation:  4s infinite linear jumbotron-down-arrow-animation;
+   transition: .4s;
+}
+
+.jumbotron-down-arrow:hover {
+   background-color: rgba(255, 255, 255, .2);
+   transition: .4s;
+}
+
+.jumbotron-down-arrow a {
+   color: white;
+}
+
+
+.big-title {
+   font-size: 4.5rem;
+}
+
+
+/* Autres */
 .auto-scroller {
    height: 200vh;
 }

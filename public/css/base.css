@@ -3,9 +3,15 @@
 	padding: 0;
 	box-sizing: border-box;
 	border: 0;
+	font-family: 'Ubuntu', sans-serif;
 }
+
+html {
+	scroll-behavior: smooth;
+ }
 
 .nav-link {
 	margin-left: 20px;
 	cursor: pointer;
 }
+
