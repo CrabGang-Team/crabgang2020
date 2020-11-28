@@ -33,7 +33,7 @@ if(localStorage.getItem("leetSpeak-activated") == undefined) {
    LeetSpeak.activated = false;
    localStorage.setItem("leetSpeak-activated", LeetSpeak.activated)
 } else {
-   LeetSpeak.activated = localStorage.getItem("leetSpeak-activated")
+   LeetSpeak.activated = JSON.parse(localStorage.getItem("leetSpeak-activated")) // Pour convertir la string en bool
 }
 
 LeetSpeak.backup = []
