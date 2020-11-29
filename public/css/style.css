@@ -141,7 +141,7 @@
    left: 30px;
 }
 
-/* ? Design 2*/
+/* ? Design 2 */
 .design .forme1-2 {
    position: absolute;
    width: 200px;
@@ -168,6 +168,69 @@
 .card-info:hover .design .forme2-2 {
    top: -60px;
    left: -70px
+}
+
+/* ? Design 3 */
+.design .forme1-3 {
+   position: absolute;
+   width: 280px;
+   height: 280px;
+   border-radius: 50%;
+   background-color: rgb(122, 64, 148);
+   top: -50px;
+   right: -30px;
+   transition: .4s;
+}
+.design .forme2-3 {
+   position: absolute;
+   width: 230px;
+   height: 230px;
+   border-radius: 50%;
+   background: linear-gradient(270deg,  rgb(220, 36, 48),  rgba(220, 36, 48, .5));
+   top: -70px;
+   left: -50px;
+   transition: .4s;
+}
+.card-info:hover .design .forme1-3 {
+   top: -20px;
+   right: -70px;
+}
+.card-info:hover .design .forme2-3 {
+   top: -20px;
+   left: -50px;
+   width: 250px;
+   height: 250px;
+}
+
+/* ? Design 4 */
+.design .forme1-4 {
+   position: absolute;
+   width: 230px;
+   height: 230px;
+   background:  rgb(220, 36, 48);
+   top: -50px;
+   right: -30px;
+   transition: .4s;
+}
+.design .forme2-4 {
+   position: absolute;
+   width: 120px;
+   height: 120px;
+   border-radius: 50%;
+   background: linear-gradient(270deg,  rgb(122, 64, 148),  rgba(122, 64, 148, .5));
+   top: 120px;
+   right: 10px;
+   transition: .4s;
+}
+.card-info:hover .design .forme1-4 {
+   transform: rotate(10deg);
+   transform-origin: right;
+}
+.card-info:hover .design .forme2-4 {
+   top: 120px;
+   right: -5px;
+   width: 140px;
+   height: 140px;
 }
 
 

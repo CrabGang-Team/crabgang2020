@@ -4,8 +4,9 @@
 
 {% block body %}
 
-{% set skill = ["Developpement", "Communication"] %}
-{% set domain = ["Technique", "Humain"] %}
+
+{% set skill = ["home.cards.developpement" | trans, "home.cards.reseau" | trans, "home.cards.gestion" | trans, "home.cards.marketing" | trans] %}
+{% set domain = ["home.cards.technique" | trans, "home.cards.technique" | trans, "home.cards.humain" | trans, "home.cards.humain" | trans] %}
 
 <div class="home-jumbotron gradient">
    <div class="jumbotron-text">
@@ -28,7 +29,7 @@
 
    <div class="container-fluid" id="cards">
       <div class="row justify-content-center">
-      {% for i in 1..2 %}
+      {% for i in 1..4 %}
          {% include "components/card-info.twig" with {
             type: i,
             skill: skill[i-1],
