@@ -107,7 +107,7 @@
    text-align: center;
 }
 
-#compteur p {
+#title-compteur {
    color: rgba(255, 255, 255, .6);
    font-size: 25px;
    font-weight: 600;

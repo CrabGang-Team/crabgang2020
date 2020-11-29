@@ -24,3 +24,24 @@
       font-size: 5.4vw;
    }
 }
+
+/* ? Compteur */
+@media screen and (max-width: 700px){
+   #title-compteur {
+      font-size: 22px;
+      padding-top: 15px;
+   }
+   #compteur-dates .element-date {
+      padding: 8px 0 15px 0;
+      margin: 0 20px 0 20px;
+      font-size: 15px;
+   }
+   #jours, #heures, #minutes, #secondes {
+      font-size: 22px;
+   }
+}
+@media screen and (max-width: 450px){
+   #title-compteur {
+      font-size: 18px;
+   }
+}
