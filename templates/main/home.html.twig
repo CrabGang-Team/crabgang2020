@@ -2,6 +2,10 @@
 
 {% block title %}{{ "navbar.items.home" | trans }}{% endblock %}
 
+{% block stylesheets %}
+   <link rel="stylesheet" href="{{ asset('css/drag.css') }}">
+{% endblock %}
+
 {% block body %}
 
 
@@ -41,9 +45,9 @@
 
    <div class="container-fluid">
       <div class="row justify-content-center">
-         <ul>
-            <li>Antoine</li>
-         </ul>
+         <div id="draggablediv">
+           <img src="{{ asset('images/bullet.png') }}">
+         </div>
       </div>
    </div>
 </section>
@@ -51,4 +55,8 @@
 
 <div class="auto-scroller"></div>
 
+{% endblock %}
+
+{% block javascripts %}
+   <script src="{{ asset('js/Drag.js') }}"></script>
 {% endblock %}
