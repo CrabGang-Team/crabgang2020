@@ -3,7 +3,7 @@ Projet pour la nuit de l'info 2020
 
 ## Requirements
 
-- PHP >= 7.2.5
+- PHP >= 7.4.1
 - [Composer](https://getcomposer.org/)
 - [Git](https://git-scm.com/)
 
