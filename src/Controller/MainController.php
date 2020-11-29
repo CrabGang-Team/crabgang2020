@@ -16,4 +16,13 @@ class MainController extends AbstractController
         return $this->render('main/home.html.twig');
     }
 
+
+    /**
+     * @Route("/admin/write", name="write_article")
+     */
+    public function write()
+    {
+        dd("write article here");
+    }
+
 }
