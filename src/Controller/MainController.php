@@ -22,7 +22,7 @@ class MainController extends AbstractController
      */
     public function write()
     {
-        dd("write article here");
+        return $this->render('admin/write.html.twig');
     }
 
 }
