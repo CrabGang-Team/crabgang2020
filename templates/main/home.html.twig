@@ -41,11 +41,44 @@
    </div>
 </section>
 
-<section id="contact" class="gradient">
-
+<section id="compteur" class="gradient">
+   <p id="title-compteur"></p>
+   <div id="compteur-dates">
+      <div class="element-date">
+         <div id="jours"></div>
+         <div leet-speak>{{ 'home.compteur.jours' | trans }}</div>
+      </div>
+      <div class="date-divider"></div>
+      <div class="element-date">
+         <div id="heures"></div>
+         <div leet-speak>{{ 'home.compteur.heures' | trans }}</div>
+      </div>
+      <div class="date-divider"></div>
+      <div class="element-date">
+         <div id="minutes"></div>
+         <div leet-speak>{{ 'home.compteur.minutes' | trans }}</div>
+      </div>
+      <div class="date-divider"></div>
+      <div class="element-date">
+         <div id="secondes"></div>
+         <div leet-speak>{{ 'home.compteur.secondes' | trans }}</div>
+      </div>
+   </div>
 </section>
 
 
 <div class="auto-scroller"></div>
 
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('js/Home.js') }}"></script>
+
+<script>
+   Home.traduction = {
+      avant: "{{ 'home.compteur.avant' | trans }}",
+      pendant: "{{ 'home.compteur.pendant' | trans }}",
+      apres: "{{ 'home.compteur.apres' | trans }}",
+   }
+</script>
 {% endblock %}
