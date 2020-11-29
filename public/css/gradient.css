@@ -2,18 +2,18 @@
    background: linear-gradient(270deg, rgb(220, 36, 48), rgb(122, 64, 148));
    background-size: 400% 400%;
 
-   -webkit-animation: AnimationName 10s ease infinite;
-   -moz-animation: AnimationName 10s ease infinite;
-   animation: AnimationName 10s ease infinite;
+   -webkit-animation: AnimationName 20s ease infinite;
+   -moz-animation: AnimationName 20s ease infinite;
+   animation: AnimationName 20s ease infinite;
 }
 
 .gradient-text {
    background: linear-gradient(270deg, rgb(220, 36, 48), rgb(122, 64, 148));
    background-size: 400% 400%;
 
-   -webkit-animation: AnimationName 10s ease infinite;
-   -moz-animation: AnimationName 10s ease infinite;
-   animation: AnimationName 10s ease infinite;
+   -webkit-animation: AnimationName 20s ease infinite;
+   -moz-animation: AnimationName 20s ease infinite;
+   animation: AnimationName 20s ease infinite;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
