@@ -29,3 +29,11 @@ Base.onLoadNavBarColor = () => {
 
 window.addEventListener("scroll", Base.onLoadNavBarColor)
 window.addEventListener("DOMContentLoaded", Base.onLoadNavBarColor)
+
+Base.scrollTop = () => {
+   window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+}
