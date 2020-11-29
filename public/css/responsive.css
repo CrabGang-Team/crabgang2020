@@ -1,0 +1,26 @@
+/* ! Home page */
+/* ? Jumbotron */
+@media screen and (max-width: 1290px) {
+   .jumbotron-text {
+      width: 80%;
+   }
+   .jumbotron-text h1 {
+      font-size: 5.2vw;
+   }
+}
+
+@media screen and (max-width: 700px) {
+   .jumbotron-text {
+      width: 90%;
+   }
+   .jumbotron-text h1 {
+      font-size: 6vw;
+   }
+}
+
+/* ? main section */
+@media screen and (max-width: 800px) {
+   #main-title h1 {
+      font-size: 5.4vw;
+   }
+}

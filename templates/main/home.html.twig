@@ -27,10 +27,11 @@
       <h1 class="gradient-text" leet-speak>{{ "home.main.title.part3" | trans }}</h1>
    </div>
 
+
    <div class="container-fluid" id="cards">
       <div class="row justify-content-center">
       {% for i in 1..4 %}
-         {% include "components/card-info.twig" with {
+         {% include "components/card-info.html.twig" with {
             type: i,
             skill: skill[i-1],
             domain: domain[i-1]
@@ -38,7 +39,6 @@
       {% endfor %}
       </div>
    </div>
-
 </section>
 
 
