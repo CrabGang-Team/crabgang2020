@@ -1,10 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Dashboard
+{% endblock %}
 
 {% block body %}
 
+	<div class="container-fluid mt-5">
+		<div class="row justify-content-center">
+			{% for i in 0..3 %}
+            {% include "components/tile.html.twig" %}
+         {% endfor %}
+		</div>
+	</div>
 
-<h1>Admin dashboard</h1>
 
 {% endblock %}

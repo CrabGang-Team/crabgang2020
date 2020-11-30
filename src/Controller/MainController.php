@@ -21,21 +21,24 @@ class MainController extends AbstractController
 
     /**
      * @Route("/write", name="write_article", methods={"GET"})
+     * Cette route est protégée par le fichier config/package/security.yaml
+     * Il faut au minimum avoir le role ROLE_USER pour y accéder
+     * Si on essaye d'y accéder dans être connecté, symfony nous redirige automatiquement vers la page de login
      */
     public function write()
     {
-        $this->denyAccessUnlessGranted("ROLE_USER");
-
+        
         return $this->render('main/write.html.twig');
     }
 
     /**
      * @Route("/write", name="write_article_post", methods={"POST"})
+     * Cette route est protégée par le fichier config/package/security.yaml
+     * Il faut au minimum avoir le role ROLE_USER pour y accéder
+     * Si on essaye d'y accéder dans être connecté, symfony nous redirige automatiquement vers la page de login
      */
     public function writePost(Request $request)
     {
-        $this->denyAccessUnlessGranted("ROLE_USER");
-
         $submittedToken = $request->request->get('token');
 
         if ($this->isCsrfTokenValid('post-article', $submittedToken)) {

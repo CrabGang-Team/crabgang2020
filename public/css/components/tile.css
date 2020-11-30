@@ -1,0 +1,15 @@
+.tile-container {
+   width: 100%;
+   border: 2px solid rgb(226, 226, 226);
+   border-radius: 10px;
+}
+
+.tile-icon {
+   text-align: center;
+   padding: 80px 0 80px 0;
+   background-color: coral;
+}
+
+.tile-icon i {
+   font-size: ;
+}
