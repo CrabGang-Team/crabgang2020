@@ -30,4 +30,3 @@ security:
         - { path: ^/(fr|en)/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/(fr|en)/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/(fr|en)/logout, role: IS_AUTHENTICATED_FULLY }
-        - { path: ^/(fr|en)/admin, role: IS_AUTHENTICATED_FULLY }

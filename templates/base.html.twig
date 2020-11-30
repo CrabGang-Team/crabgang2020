@@ -42,6 +42,10 @@
 			<div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
 				<div class="navbar-nav navbar-right ml-auto">
 
+					{% if is_granted('ROLE_ADMIN') %}
+						<a class="nav-link" href="{{ url('admin_dashboard') }}" leet-speak>{{ "navbar.items.admin" | trans }}</a>
+					{% endif %}
+
 					{% if app.user %}
 						<a class="nav-link" href="{{ url('write_article') }}" leet-speak>{{ "navbar.items.write" | trans }}</a>
 						<a class="nav-link" href="{{ url('app_logout') }}" leet-speak>{{ "navbar.items.deconnexion" | trans }}</a>
@@ -52,6 +56,7 @@
 
 					<a class="nav-link" leet-speak onclick="Base.changeLocale('{{app.request.locale}}')">{{ app.request.locale == "fr" ? "language.english" | trans : "language.french" | trans }}</a>
 					<a class="nav-link" leet-speak onclick="LeetSpeak.toggle()">LeetSpeak</a>
+					<a class="nav-link" leet-speak href="{{ url('home') }}">{{ "navbar.items.home" | trans }}</a>
 				</div>
 			</div>
 		</nav>
