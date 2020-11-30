@@ -8,7 +8,9 @@
 	<div class="container-fluid mt-5">
 		<div class="row justify-content-center">
 			{% for i in 0..3 %}
-            {% include "components/tile.html.twig" %}
+            {% include "components/tile.html.twig" with {
+               "location": "#"
+            %}
          {% endfor %}
 		</div>
 	</div>
