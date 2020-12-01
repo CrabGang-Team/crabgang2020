@@ -21,13 +21,13 @@ Projet pour la nuit de l'info 2020
 
 1. Pour récuperer le projet (:warning: : Naviguez d'abord dans le dossier ou vous souhaitez le sauvegarder) : 
 ```
-git clone https://github.com/CrabGang-Team/NuitInfo2020.git
+git clone https://github.com/CrabGang-Team/crabgang2020.git
 ```
 
 2. récupération des dépendances
 
 ```
-cd NuitInfo2020
+cd crabgang2020
 ```
 
 :warning: : Attention il vous faut une version de php supérieur ou égal à 7.4.1
