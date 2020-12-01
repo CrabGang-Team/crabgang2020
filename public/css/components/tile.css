@@ -2,14 +2,35 @@
    width: 100%;
    border: 2px solid rgb(226, 226, 226);
    border-radius: 10px;
+   padding-bottom: 25px;
+}
+a {
+   text-decoration: none !important;
+}
+
+.tile-container h3 {
+   text-align: center;
+   color: rgb(100, 100, 100);
+   transition: .4s;
 }
 
 .tile-icon {
    text-align: center;
-   padding: 80px 0 80px 0;
-   background-color: coral;
+   padding: 40px 0 50px 0;
 }
 
 .tile-icon i {
-   font-size: ;
+   font-size: 50px;
+   color: rgb(100, 100, 100);
+   transition: .4s;
 }
+
+.tile-container:hover h3 {
+   color: rgb(25, 25, 25);
+   transition: .4s;
+}
+.tile-container:hover .tile-icon i {
+   color: rgb(25, 25, 25);
+   transition: .4s;
+}
+

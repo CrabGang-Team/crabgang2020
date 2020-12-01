@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Users
+{% endblock %}
+
+
+{% block body %}
+
+	<div class="container-fluid mt-5">
+		<div class="row justify-content-center">
+			<div class="col-10">
+
+				<h2>Admins</h2>
+				{% if admins|length > 0 %}
+					{% for key, admin in admins %}
+						<div class="card {{ key > 0 ? 'mt-3' : '' }}">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-8">
+										<h5 class="card-title">{{ admin.username }}</h5>
+									</div>
+									<div class="col-4 text-right">
+										<a href="{{ url('admin_user_posts', {user: admin.id}) }}" class="btn btn-outline-primary mr-2">Posts</a>
+										{% if admin.id != app.user.id %}
+											<a href="{{ url('admin_user_delete', {user: admin.id}) }}" class="btn btn-danger">Delete</a>
+										{% endif %}
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				{% else %}
+					<h5>Aucun autre compte admin n'a été créé</h5>
+				{% endif %}
+
+
+				<h2 class="mt-5">Users</h2>
+				{% if users|length > 0 %}
+					{% for key, user in users %}
+						<div class="card {{ key > 0 ? 'mt-3' : '' }}">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-8">
+										<h5 class="card-title">{{ user.username }}</h5>
+									</div>
+									<div class="col-4 text-right">
+										<a href="{{ url('admin_user_posts', {user: user.id}) }}" class="btn btn-outline-primary mr-2">Posts</a>
+										<a href="{{ url('admin_user_delete', {user: user.id}) }}" class="btn btn-danger">Delete</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				{% else %}
+					<h5>Aucun compte user n'a été créé</h5>
+				{% endif %}
+
+
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

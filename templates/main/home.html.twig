@@ -1,84 +1,121 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ "navbar.items.home" | trans }}{% endblock %}
+{% block title %}
+	{{ "navbar.items.home" | trans }}
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/components/card-info.css') }}">
+{% endblock %}
 
 {% block body %}
 
 
-{% set skill = ["home.cards.developpement" | trans, "home.cards.reseau" | trans, "home.cards.gestion" | trans, "home.cards.marketing" | trans] %}
-{% set domain = ["home.cards.technique" | trans, "home.cards.technique" | trans, "home.cards.humain" | trans, "home.cards.humain" | trans] %}
+	{% set skill = ["home.cards.developpement" | trans, "home.cards.reseau" | trans, "home.cards.gestion" | trans, "home.cards.marketing" | trans] %}
+	{% set domain = ["home.cards.technique" | trans, "home.cards.technique" | trans, "home.cards.humain" | trans, "home.cards.humain" | trans] %}
 
-<div class="home-jumbotron gradient">
-   <div class="jumbotron-text">
-      <h1 class="big-title px-5" leet-speak>{{ "home.jumbotron.title" | trans }}</h1>
-      <p class="mt-5" leet-speak>{{ "home.jumbotron.description" | trans }}</p>
-   </div>
-   <div class="mt-5 jumbotron-down-arrow">
-      <h2 class="text-white">
-         <a href="#main"><i class="fas fa-chevron-down"></i></a>
-      </h2>
-   </div>
-</div>
+	<div class="home-jumbotron gradient">
+		<div class="jumbotron-text">
+			<h1 class="big-title px-5" leet-speak>{{ "home.jumbotron.title" | trans }}</h1>
+			<p class="mt-5" leet-speak>{{ "home.jumbotron.description" | trans }}</p>
+		</div>
+		<div class="mt-5 jumbotron-down-arrow">
+			<h2 class="text-white">
+				<a href="#main">
+					<i class="fas fa-chevron-down"></i>
+				</a>
+			</h2>
+		</div>
+	</div>
 
-<section id="main">
-   <div id="main-title">
-      <h1 class="gradient-text" leet-speak>{{ "home.main.title.part1" | trans }}</h1>&nbsp;
-      <h1 class="gradient-text"><span id="dominant" leet-speak>{{ "home.main.title.part2" | trans }}</span></h1>&nbsp;
-      <h1 class="gradient-text" leet-speak>{{ "home.main.title.part3" | trans }}</h1>
-   </div>
+	<section id="main">
+		<div id="main-title">
+			<h1 class="gradient-text" leet-speak>{{ "home.main.title.part1" | trans }}</h1>&nbsp;
+			<h1 class="gradient-text">
+				<span id="dominant" leet-speak>{{ "home.main.title.part2" | trans }}</span>
+			</h1>&nbsp;
+			<h1 class="gradient-text" leet-speak>{{ "home.main.title.part3" | trans }}</h1>
+		</div>
 
 
-   <div class="container-fluid" id="cards">
-      <div class="row justify-content-center">
-      {% for i in 1..4 %}
-         {% include "components/card-info.html.twig" with {
+		<div class="container-fluid" id="cards">
+			<div class="row justify-content-center">
+				{% for i in 1..4 %}
+					{% include "components/card-info.html.twig" with {
             type: i,
             skill: skill[i-1],
             domain: domain[i-1]
          }%}
-      {% endfor %}
-      </div>
-   </div>
-</section>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
 
-<section id="compteur" class="gradient">
-   <p id="title-compteur"></p>
-   <div id="compteur-dates">
-      <div class="element-date">
-         <div id="jours"></div>
-         <div leet-speak>{{ 'home.compteur.jours' | trans }}</div>
-      </div>
-      <div class="date-divider"></div>
-      <div class="element-date">
-         <div id="heures"></div>
-         <div leet-speak>{{ 'home.compteur.heures' | trans }}</div>
-      </div>
-      <div class="date-divider"></div>
-      <div class="element-date">
-         <div id="minutes"></div>
-         <div leet-speak>{{ 'home.compteur.minutes' | trans }}</div>
-      </div>
-      <div class="date-divider"></div>
-      <div class="element-date">
-         <div id="secondes"></div>
-         <div leet-speak>{{ 'home.compteur.secondes' | trans }}</div>
-      </div>
-   </div>
-</section>
+	<section id="compteur" class="gradient">
+		<p id="title-compteur"></p>
+		<div id="compteur-dates">
+			<div class="element-date">
+				<div id="jours"></div>
+				<div leet-speak>{{ 'home.compteur.jours' | trans }}</div>
+			</div>
+			<div class="date-divider"></div>
+			<div class="element-date">
+				<div id="heures"></div>
+				<div leet-speak>{{ 'home.compteur.heures' | trans }}</div>
+			</div>
+			<div class="date-divider"></div>
+			<div class="element-date">
+				<div id="minutes"></div>
+				<div leet-speak>{{ 'home.compteur.minutes' | trans }}</div>
+			</div>
+			<div class="date-divider"></div>
+			<div class="element-date">
+				<div id="secondes"></div>
+				<div leet-speak>{{ 'home.compteur.secondes' | trans }}</div>
+			</div>
+		</div>
+	</section>
 
 
-<div class="auto-scroller"></div>
+	{% if lastPosts|length > 0 %}
+	<section id="last3posts" class="container-fluid mt-5">
+		<div class="row justify-content-center">
+			<div class="col-10">
+				<h2 class="gradient-text pb-4">Last posts</h2>
+				<div class="row">
+					{% for post in lastPosts %}
+               <div class="col-12 col-md-6 col-lg-4 mt-3 mt-lg-0">
+							<div class="card">
+								<div class="card-header admin-card-title">{{ post.title }}</div>
+								<div class="card-body ">
+									<div class="post-list-content">
+										{{ post.content }}
+									</div>
+									<a href="{{ url('post', {post: post.id}) }}" class="btn btn-primary mt-3">Read</a>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+
+		</div>
+	</section>
+	{% endif %}
+
+
+	{# <div class="auto-scroller"></div> #}
 
 {% endblock %}
 
 {% block javascripts %}
-<script src="{{ asset('js/Home.js') }}"></script>
+	<script src="{{ asset('js/Home.js') }}"></script>
 
-<script>
-   Home.traduction = {
-      avant: "{{ 'home.compteur.avant' | trans }}",
-      pendant: "{{ 'home.compteur.pendant' | trans }}",
-      apres: "{{ 'home.compteur.apres' | trans }}",
-   }
-</script>
+	<script>
+		Home.traduction = {
+avant: "{{ 'home.compteur.avant' | trans }}",
+pendant: "{{ 'home.compteur.pendant' | trans }}",
+apres: "{{ 'home.compteur.apres' | trans }}"
+}
+	</script>
 {% endblock %}

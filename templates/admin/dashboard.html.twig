@@ -1,17 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Dashboard
+{% block title %}{{ "admin.dashboard.page.title" | trans }}{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/components/tile.css') }}">
 {% endblock %}
 
 {% block body %}
 
 	<div class="container-fluid mt-5">
 		<div class="row justify-content-center">
-			{% for i in 0..3 %}
-            {% include "components/tile.html.twig" with {
-               "location": "#"
-            %}
-         {% endfor %}
+			{% include "components/tile.html.twig" with {
+				"location": url('admin_users_list'),
+				"title": "admin.dashboard.users" | trans
+			} %}
+
+			{% include "components/tile.html.twig" with {
+				"location":url('admin_posts_list'),
+				"title": "admin.dashboard.posts" | trans
+			} %}
 		</div>
 	</div>
 

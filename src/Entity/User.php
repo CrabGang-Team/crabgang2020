@@ -40,7 +40,7 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\OneToMany(targetEntity=Post::class, mappedBy="user", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity=Post::class, mappedBy="user", cascade={"persist", "remove"})
      */
     private $posts;
 

@@ -16,7 +16,10 @@ class MainController extends AbstractController
      */
     public function home(): Response
     {
-        return $this->render('main/home.html.twig');
+        $lastPosts = $this->getDoctrine()->getRepository(Post::class)->getLastThreePosts();
+        return $this->render('main/home.html.twig', [
+            "lastPosts" => $lastPosts
+        ]);
     }
 
     /**
@@ -62,8 +65,31 @@ class MainController extends AbstractController
                 "error" => "csrf-token"
             ]);
         }
-
-        
     }
+
+    /**
+     * @Route("/posts/{post}", name="post")
+     */
+    public function post(Post $post)
+    {
+        $lastPosts = $this->getDoctrine()->getRepository(Post::class)->getLastThreeExceptCurrent($post);
+        return $this->render('main/post-full.html.twig', [
+            "post" => $post,
+            "lastPosts" => $lastPosts
+        ]);
+    }
+
+    /**
+     * @Route("/posts", name="posts")
+     */
+    public function posts()
+    {
+        $posts = $this->getDoctrine()->getRepository(Post::class)->getAllPosts();
+        return $this->render('main/posts.html.twig', [
+            "posts" => $posts
+        ]);
+    }
+
+
 
 }

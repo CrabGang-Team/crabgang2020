@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Post-full{% endblock %}
+
+{% block body %}
+
+
+<div class="container-fluid mt-5">
+   <div class="row justify-content-center">
+      <div class="col-10">
+         <a href="{{ url('posts') }}">&lt; Back</a>
+         <h3 class="text-center">{{ post.title }}</h3>
+         <small class="text-muted mt-3">
+            Écrit par {{ post.user.username }}<br>{{ post.createdAt|date("d/m/Y") }}
+         </small>
+
+         <div class="mt-3">
+            {{ post.content }}
+         </div>
+
+         <h2 class="gradient-text pb-4 pt-5">Last posts</h2>
+
+         {% if lastPosts|length > 0 %}
+         
+         <div class="row">
+            {% for post in lastPosts %}
+               <div class="col-12 col-md-6 col-lg-4 mt-3 mt-lg-0">
+                  <div class="card">
+                     <div class="card-header admin-card-title">{{ post.title }}</div>
+                     <div class="card-body ">
+                        <div class="post-list-content">
+                           {{ post.content }}
+                        </div>
+                        <a href="{{ url('post', {post: post.id}) }}" class="btn btn-primary mt-3">Read</a>
+                     </div>
+                  </div>
+               </div>
+            {% endfor %}
+         </div>
+         {% else %}
+            <h5>Aucun article n'est disponible</h5>
+         {% endif %}
+
+      </div>
+   </div>
+</div>
+
+
+{% endblock %}
+

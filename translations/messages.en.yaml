@@ -44,4 +44,8 @@ write.input.content: "Content"
 write.input.placeholder.content: "The Fiat Multipla is really splendid..."
 write.input.button: "Post"
 
+admin.dashboard.users: "Users"
+admin.dashboard.posts: "Posts"
+admin.dashboard.page.title: "Dashboard"
+
 error.form.csrf: "Invalid CSRF Token"

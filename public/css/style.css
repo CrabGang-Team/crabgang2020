@@ -138,6 +138,23 @@
    font-weight: 600;
 }
 
+/* ! Admin */
+/* ? Users list */
+.admin-card-title {
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.post-list-content {
+   display: block;
+   max-height: 70px;
+   display: -webkit-box;
+   -webkit-line-clamp: 3;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
 
 /* ! Autres */
 .auto-scroller {

@@ -26,8 +26,6 @@
 		<link rel="stylesheet" href="{{ asset('css/base.css') }}">
 
 		{# Personal CSS #}
-		<link rel="stylesheet" href="{{ asset('css/components/card-info.css') }}">
-		<link rel="stylesheet" href="{{ asset('css/components/tile.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 		
@@ -58,11 +56,12 @@
 					<a class="nav-link" leet-speak onclick="Base.changeLocale('{{app.request.locale}}')">{{ app.request.locale == "fr" ? "language.english" | trans : "language.french" | trans }}</a>
 					<a class="nav-link" leet-speak onclick="LeetSpeak.toggle()">LeetSpeak</a>
 					<a class="nav-link" leet-speak href="{{ url('home') }}">{{ "navbar.items.home" | trans }}</a>
+					<a class="nav-link" leet-speak href="{{ url('posts') }}">Articles</a>
 				</div>
 			</div>
 		</nav>
 
-		<div style="padding-top: 56px">
+		<div style="padding-top: 56px" class="pb-5">
 			{% block body %}{% endblock %}
 		</div>
 
