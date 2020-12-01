@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Posts
+{% block title %}{{ "admin.posts.page.title" | trans }}
 {% endblock %}
 
 {% block body %}
@@ -15,23 +15,27 @@
 						<div class="card {{ key > 0 ? 'mt-3' : 'mt-4' }}">
 							<div class="card-header">
 								<div class="row">
-									<div class="col-8">
-										<h5 class="admin-card-title">{{ post.title }}</h5>
+									<div class="col-12 col-md-8">
+										<h5 class="admin-card-title" leet-speak>{{ post.title }}</h5>
 									</div>
-									<div class="col-4 text-right">
-										<a href="{{ url('post', {post: post.id}) }}" class="btn btn-outline-primary mr-2">Read</a>
+									<div class="col-12 col-md-4 mt-3 mt-md-0 text-right">
+										<a href="{{ url('post', {post: post.id}) }}" class="btn btn-outline-primary mr-2" leet-speak>{{ "admin.posts.read" | trans }}</a>
+										
+										{% if is_granted("ROLE_ADMIN") %}
+											<a href="{{ url('admin_post_delete', {post: post.id}) }}" class="btn btn-danger" leet-speak>{{ "admin.posts.delete" | trans }}</a>
+										{% endif %}
 									</div>
 								</div>
 							</div>
 							<div class="card-body admin-card-content">
-								<div class="post-list-content">
+								<div class="post-list-content" leet-speak>
 									{{ post.content }}
 								</div>
 							</div>
 						</div>
 					{% endfor %}
 				{% else %}
-					<h5 class="mt-4">Aucun article n'a été posté</h5>
+					<h5 class="mt-4" leet-speak>{{ "admin.posts.empty" | trans }}</h5>
 				{% endif %}
 
 

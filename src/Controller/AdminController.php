@@ -38,7 +38,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/admin/users/{user}", name="admin_user_posts")
+     * @Route("/admin/users/{user}/posts", name="admin_user_posts")
      * Ici, le paramètre "user" dans l'url va automatiquement être converti en User
      */
     public function userPosts(User $user): Response 
@@ -78,6 +78,21 @@ class AdminController extends AbstractController
         $entityManager->flush();
         
 
+        return $this->redirectToRoute("admin_posts_list");
+    }
+
+    /**
+     * @Route("/admin/users/posts/{post}/delete", name="admin_postFromUser_delete")
+     * Ici, le paramètre "user" dans l'url va automatiquement être converti en User
+     */
+    public function postFromUserDelete(Post $post): Response 
+    {
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($post);
+        $entityManager->flush();
+        
+
         return $this->redirectToRoute("admin_user_posts", [
             "user" => $this->getUser()->getId()
         ]);
@@ -90,7 +105,7 @@ class AdminController extends AbstractController
     {
         $posts = $this->getDoctrine()->getRepository(Post::class)->getAllPosts();
 
-        return $this->render('admin/posts.html.twig', [
+        return $this->render('main/posts.html.twig', [
             "posts" => $posts
         ]);
     }

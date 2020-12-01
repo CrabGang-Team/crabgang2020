@@ -12,12 +12,13 @@
             {% endif %}
 
             {% if app.user %}
-                <div class="mb-3">
-                    You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                <div  leet-speak>
+                    {{ "login.login.as" | trans }} {{ app.user.username }}
                 </div>
+                <a href="{{ path('app_logout') }}" leet-speak>{{ "login.logout" | trans }}</a>
             {% endif %}
 
-            <h1 class="h3 mb-3 font-weight-normal">{{ "login.title" | trans }}</h1>
+            <h1 class="h3 mt-3 mb-3 font-weight-normal" leet-speak>{{ "login.title" | trans }}</h1>
             <label for="inputUsername" leet-speak>{{ "login.username" | trans }}</label>
             <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" required autofocus>
             <label for="inputPassword" class="mt-3" leet-speak>{{ "login.password" | trans }}</label>

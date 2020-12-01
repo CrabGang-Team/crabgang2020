@@ -56,7 +56,7 @@
 					<a class="nav-link" leet-speak onclick="Base.changeLocale('{{app.request.locale}}')">{{ app.request.locale == "fr" ? "language.english" | trans : "language.french" | trans }}</a>
 					<a class="nav-link" leet-speak onclick="LeetSpeak.toggle()">LeetSpeak</a>
 					<a class="nav-link" leet-speak href="{{ url('home') }}">{{ "navbar.items.home" | trans }}</a>
-					<a class="nav-link" leet-speak href="{{ url('posts') }}">Articles</a>
+					<a class="nav-link" leet-speak href="{{ url('posts') }}">{{ "navbar.items.articles" | trans }}</a>
 				</div>
 			</div>
 		</nav>

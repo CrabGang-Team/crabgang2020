@@ -42,10 +42,10 @@
 			<div class="row justify-content-center">
 				{% for i in 1..4 %}
 					{% include "components/card-info.html.twig" with {
-            type: i,
-            skill: skill[i-1],
-            domain: domain[i-1]
-         }%}
+						type: i,
+						skill: skill[i-1],
+						domain: domain[i-1]
+					}%}
 				{% endfor %}
 			</div>
 		</div>
@@ -81,17 +81,17 @@
 	<section id="last3posts" class="container-fluid mt-5">
 		<div class="row justify-content-center">
 			<div class="col-10">
-				<h2 class="gradient-text pb-4">Last posts</h2>
+				<h2 class="gradient-text pb-4" leet-speak>{{ "home.lastPosts.title" | trans }}</h2>
 				<div class="row">
 					{% for post in lastPosts %}
                <div class="col-12 col-md-6 col-lg-4 mt-3 mt-lg-0">
 							<div class="card">
-								<div class="card-header admin-card-title">{{ post.title }}</div>
+								<div class="card-header admin-card-title" leet-speak>{{ post.title }}</div>
 								<div class="card-body ">
-									<div class="post-list-content">
+									<div class="post-list-content" leet-speak>
 										{{ post.content }}
 									</div>
-									<a href="{{ url('post', {post: post.id}) }}" class="btn btn-primary mt-3">Read</a>
+									<a href="{{ url('post', {post: post.id}) }}" class="btn btn-primary mt-3" leet-speak>{{ "home.lastPosts.button.read" | trans }}</a>
 								</div>
 							</div>
 						</div>
@@ -103,9 +103,6 @@
 	</section>
 	{% endif %}
 
-
-	{# <div class="auto-scroller"></div> #}
-
 {% endblock %}
 
 {% block javascripts %}
@@ -113,9 +110,9 @@
 
 	<script>
 		Home.traduction = {
-avant: "{{ 'home.compteur.avant' | trans }}",
-pendant: "{{ 'home.compteur.pendant' | trans }}",
-apres: "{{ 'home.compteur.apres' | trans }}"
-}
+			avant: "{{ 'home.compteur.avant' | trans }}",
+			pendant: "{{ 'home.compteur.pendant' | trans }}",
+			apres: "{{ 'home.compteur.apres' | trans }}"
+		}
 	</script>
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Posts
+{% block title %}{{ "admin.users.posts.page.title" | trans }} - {{ user.username }}
 {% endblock %}
 
 
@@ -9,10 +9,10 @@
 	<div class="container-fluid mt-5">
 		<div class="row justify-content-center">
 			<div class="col-10">
-				<h3>{{ user.username }}</h3>
+				<h3 leet-speak>{{ user.username }}</h3>
 				
 				{% if app.user.id != user.id %}
-					<a href="{{ url('admin_user_delete', {user:user.id}) }}" class="text-danger">Delete this user</a>
+					<a href="{{ url('admin_user_delete', {user:user.id}) }}" class="text-danger" leet-speak>{{ "admin.users.posts.delete.user" | trans }}</a>
 				{% endif %}
 				
 				{% if posts|length > 0 %}
@@ -21,23 +21,23 @@
 							<div class="card-header">
 								<div class="row">
 									<div class="col-12 col-md-8">
-										<h5 class="admin-card-title">{{ post.title }}</h5>
+										<h5 class="admin-card-title" leet-speak>{{ post.title }}</h5>
 									</div>
 									<div class="col-12 col-md-4 mt-3 mt-md-0 text-right">
-										<a href="{{ url('post', {post: post.id}) }}" class="btn btn-outline-primary mr-2">Read</a>
-										<a href="{{ url('admin_post_delete', {post: post.id}) }}" class="btn btn-danger">Delete</a>
+										<a href="{{ url('post', {post: post.id}) }}" class="btn btn-outline-primary mr-2" leet-speak>{{ "admin.users.posts.read" | trans }}</a>
+										<a href="{{ url('admin_postFromUser_delete', {post: post.id}) }}" class="btn btn-danger" leet-speak>{{ "admin.users.posts.delete" | trans }}</a>
 									</div>
 								</div>
 							</div>
 							<div class="card-body admin-card-content">
-								<div class="post-list-content">
+								<div class="post-list-content" leet-speak>
 									{{ post.content }}
 								</div>
 							</div>
 						</div>
 					{% endfor %}
 				{% else %}
-					<h5 class="mt-4">Cet utilisateur n'a rien posté</h5>
+					<h5 class="mt-4" leet-speak>{{ "admin.users.posts.empty" | trans }}</h5>
 				{% endif %}
 
 

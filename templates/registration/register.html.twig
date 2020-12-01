@@ -18,11 +18,13 @@
   
             {{ form_row(registrationForm.username, {
                 label: "inscription.username" | trans,
-                attr: {class: "form-control mb-3"}
+                attr: {class: "form-control mb-3"},
+                label_attr: {"leet-speak": ""}
             }) }}
             {{ form_row(registrationForm.plainPassword, {
                 label: "inscription.password" | trans,
-                attr: {class: "form-control"}
+                attr: {class: "form-control"},
+                label_attr: {"leet-speak": ""}
             }) }}
 
             <button type="submit" class="btn btn-lg btn-primary mt-3" leet-speak>{{ "inscription.button" | trans }}</button>
