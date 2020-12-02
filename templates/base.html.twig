@@ -34,27 +34,43 @@
 	<body>
 
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark gradient" id="navbar">
-			<span class="navbar-brand mb-0 h1" leet-speak>Crab'Gang</span>
+			<span class="navbar-brand mb-0 h1" leet-speak onclick="Base.scrollTop()">Crab'Gang</span>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
 				<div class="navbar-nav navbar-right ml-auto">
-					<a class="nav-link" href="#" leet-speak>{{ "navbar.items.home" | trans }}</a>
-					<a class="nav-link" href="#" leet-speak>{{ "navbar.items.features" | trans }}</a>
+
+					{% if is_granted('ROLE_ADMIN') %}
+						<a class="nav-link" href="{{ url('admin_dashboard') }}" leet-speak>{{ "navbar.items.admin" | trans }}</a>
+					{% endif %}
+
+					{% if app.user %}
+						<a class="nav-link" href="{{ url('write_article') }}" leet-speak>{{ "navbar.items.write" | trans }}</a>
+						<a class="nav-link" href="{{ url('app_logout') }}" leet-speak>{{ "navbar.items.deconnexion" | trans }}</a>
+					{% else %}
+						<a class="nav-link" href="{{ url('app_login') }}" leet-speak>{{ "navbar.items.connexion" | trans }}</a>
+						<a class="nav-link" href="{{ url('app_register') }}" leet-speak>{{ "navbar.items.inscription" | trans }}</a>
+					{% endif %}
+
 					<a class="nav-link" leet-speak onclick="Base.changeLocale('{{app.request.locale}}')">{{ app.request.locale == "fr" ? "language.english" | trans : "language.french" | trans }}</a>
 					<a class="nav-link" leet-speak onclick="LeetSpeak.toggle()">LeetSpeak</a>
+					<a class="nav-link" leet-speak href="{{ url('home') }}">{{ "navbar.items.home" | trans }}</a>
+					<a class="nav-link" leet-speak href="{{ url('posts') }}">{{ "navbar.items.articles" | trans }}</a>
 				</div>
 			</div>
 		</nav>
 
-		{% block body %}{% endblock %}
+		<div style="padding-top: 56px" class="pb-5">
+			{% block body %}{% endblock %}
+		</div>
 
 		{# Bootstrap JS #}
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
 		{# JQuery #}
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   		
 		{# Personal JS #}

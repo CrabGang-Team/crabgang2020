@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ "login.title" | trans }}{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid pt-5">
+    <div class="row justify-content-center">
+        <form method="post" class="col-10 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+            {% if error %}
+                <div class="alert alert-danger" leet-speak>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            {% if app.user %}
+                <div  leet-speak>
+                    {{ "login.login.as" | trans }} {{ app.user.username }}
+                </div>
+                <a href="{{ path('app_logout') }}" leet-speak>{{ "login.logout" | trans }}</a>
+            {% endif %}
+
+            <h1 class="h3 mt-3 mb-3 font-weight-normal" leet-speak>{{ "login.title" | trans }}</h1>
+            <label for="inputUsername" leet-speak>{{ "login.username" | trans }}</label>
+            <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" required autofocus>
+            <label for="inputPassword" class="mt-3" leet-speak>{{ "login.password" | trans }}</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" required>
+
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+            <button class="btn btn-lg btn-primary mt-3" type="submit" leet-speak>
+                {{ "login.button" | trans }}
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

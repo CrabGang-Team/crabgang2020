@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ "admin.users.page.title" | trans }}
+{% endblock %}
+
+
+{% block body %}
+
+	<div class="container-fluid mt-5">
+		<div class="row justify-content-center">
+			<div class="col-10">
+
+				<h2 leet-speak>{{ "admin.users.admins" | trans }}</h2>
+				{% for key, admin in admins %}
+					<div class="card {{ key > 0 ? 'mt-3' : '' }}">
+						<div class="card-body">
+							<div class="row">
+								<div class="col-8">
+									<h5 class="card-title" leet-speak>{{ admin.username }}</h5>
+								</div>
+								<div class="col-4 text-right">
+									<a href="{{ url('admin_user_posts', {user: admin.id}) }}" class="btn btn-outline-primary mr-2" leet-speak>{{ "admin.users.buttons.posts" | trans }}</a>
+									{% if admin.id != app.user.id %}
+										<a href="{{ url('admin_user_delete', {user: admin.id}) }}" class="btn btn-danger" leet-speak>{{ "admin.users.buttons.delete" | trans }}</a>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+
+
+				<h2 class="mt-5" leet-speak>{{ "admin.users.users" | trans }}</h2>
+				{% if users|length > 0 %}
+					{% for key, user in users %}
+						<div class="card {{ key > 0 ? 'mt-3' : '' }}">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-8">
+										<h5 class="card-title" leet-speak>{{ user.username }}</h5>
+									</div>
+									<div class="col-4 text-right">
+										<a href="{{ url('admin_user_posts', {user: user.id}) }}" class="btn btn-outline-primary mr-2" leet-speak>{{ "admin.users.buttons.posts" | trans }}</a>
+										<a href="{{ url('admin_user_delete', {user: user.id}) }}" class="btn btn-danger" leet-speak>{{ "admin.users.buttons.delete" | trans }}</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				{% else %}
+					<h5 leet-speak>{{ "admin.users.users.empty" | trans }}</h5>
+				{% endif %}
+
+
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

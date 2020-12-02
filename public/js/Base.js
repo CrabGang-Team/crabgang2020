@@ -2,9 +2,17 @@ let Base = {}
 Base.changeLocale = (locale) => {
    let newUrl = document.location.pathname.split("/")
    if(locale == "en") {
-      newUrl[1] = "fr"
+      for(let i = 0; i < newUrl.length; i++) {
+         if(newUrl[i] === "en") {
+            newUrl[i] = "fr"
+         }
+      }
    } else {
-      newUrl[1] = "en"
+      for(let i = 0; i < newUrl.length; i++) {
+         if(newUrl[i] === "fr") {
+            newUrl[i] = "en"
+         }
+      }
    }
    newUrl = newUrl.join("/")
    newUrl = newUrl+document.location.search
@@ -21,3 +29,11 @@ Base.onLoadNavBarColor = () => {
 
 window.addEventListener("scroll", Base.onLoadNavBarColor)
 window.addEventListener("DOMContentLoaded", Base.onLoadNavBarColor)
+
+Base.scrollTop = () => {
+   window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+}
