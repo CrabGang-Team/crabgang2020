@@ -18,7 +18,7 @@
    position: absolute;
    width: 200px;
    height: 200px;
-   background-color: rgb(122, 64, 148);
+   background-color: rgb(18, 49, 78);
    top: -40px;
    right: -15px;
    transition: .4s;
@@ -27,7 +27,7 @@
    position: absolute;
    width: 150px;
    height: 150px;
-   background: linear-gradient(270deg, rgb(220, 36, 48), rgba(220, 36, 48, .5));
+   background: linear-gradient(270deg, rgb(14, 184, 226), rgba(14, 184, 226, .5));
    top: 90px;
    left: 0px;
    transition: .4s;
@@ -46,7 +46,7 @@
    position: absolute;
    width: 200px;
    height: 220px;
-   background-color: rgb(220, 36, 48);
+   background-color: rgb(14, 184, 226);
    top: -40px;
    right: -15px;
    transition: .4s;
@@ -56,7 +56,7 @@
    width: 230px;
    height: 230px;
    border-radius: 50%;
-   background: linear-gradient(270deg,  rgb(122, 64, 148),  rgba(122, 64, 148, .5));
+   background: linear-gradient(270deg,  rgb(18, 49, 78),  rgba(18, 49, 78, .5));
    top: -70px;
    left: -50px;
    transition: .4s;
@@ -76,7 +76,7 @@
    width: 280px;
    height: 280px;
    border-radius: 50%;
-   background-color: rgb(122, 64, 148);
+   background-color: rgb(18, 49, 78);
    top: -50px;
    right: -30px;
    transition: .4s;
@@ -86,7 +86,7 @@
    width: 230px;
    height: 230px;
    border-radius: 50%;
-   background: linear-gradient(270deg,  rgb(220, 36, 48),  rgba(220, 36, 48, .5));
+   background: linear-gradient(270deg,  rgb(14, 184, 226),  rgba(14, 184, 226, .5));
    top: -70px;
    left: -50px;
    transition: .4s;
@@ -107,7 +107,7 @@
    position: absolute;
    width: 230px;
    height: 230px;
-   background:  rgb(220, 36, 48);
+   background:  rgb(14, 184, 226);
    top: -50px;
    right: -30px;
    transition: .4s;
@@ -117,7 +117,7 @@
    width: 120px;
    height: 120px;
    border-radius: 50%;
-   background: linear-gradient(270deg,  rgb(122, 64, 148),  rgba(122, 64, 148, .5));
+   background: linear-gradient(270deg,  rgb(18, 49, 78),  rgba(18, 49, 78, .5));
    top: 120px;
    right: 10px;
    transition: .4s;
