@@ -89,3 +89,6 @@ leetspeak.console.tipsButton: "Tip"
 leetspeak.console.close: "Close"
 leetspeak.console.decode: "Decode"
 leetspeak.console.reset: "Reset"
+
+map.title: "Here you can find a list of great spots: "
+map.subtitle: "Do not hesitate to add yours!"

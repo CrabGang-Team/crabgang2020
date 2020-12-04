@@ -78,7 +78,12 @@
 			</div>
 		</div>
 	</section>
-
+	
+	<section id="map" class="mt-5">
+		<h4 leet-speak inverse>{{ 'map.title' | trans }}</h4>
+		<iframe frameborder=0 style='width:100%;height:500px' src='//www.zeemaps.com/pub?group=3986055&locate=1&search=1&x=-44.185579&y=23.871298&z=15'></iframe>
+		<p leet-speak inverse>{{ 'map.subtitle' | trans }}</p>
+	</section>
 
 	{% if lastPosts|length > 0 %}
 	<section id="last3posts" class="container-fluid mt-5">
