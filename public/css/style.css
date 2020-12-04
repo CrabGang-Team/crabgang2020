@@ -160,3 +160,26 @@
 .auto-scroller {
    height: 200vh;
 }
+
+/* among us */
+.hint1 {
+   width: 100%;
+   position: relative;
+}
+
+#gifHint1 {
+   position: absolute;
+   top: 20%;
+   left: 40%;
+}
+
+.hint2 {
+   width: 100%;
+   position: relative;
+}
+
+#gifHint2 {
+   position: absolute;
+   top: 0%;
+   left: 80%;
+}
