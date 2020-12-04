@@ -1,7 +1,6 @@
 #draggablediv {
 	position: absolute;
   	z-index: 9;
-  	background-color: #516dec;
   	width: 100%;
   	height: 4vh;
 }

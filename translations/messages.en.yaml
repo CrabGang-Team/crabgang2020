@@ -82,3 +82,12 @@ admin.users.buttons.delete: "Delete"
 admin.users.users.empty: "No user account has been created"
 
 error.form.csrf: "Invalid CSRF Token"
+
+leetspeak.dolphin.tooltip: "Drag the dolphin to active the secret mode"
+leetspeak.console.title: "L337 5P34k console"
+leetspeak.console.text: "The code to find you need, to the leet speak mode activate:"
+leetspeak.console.tipsText: "Tip:"
+leetspeak.console.tipsButton: "Tip"
+leetspeak.console.close: "Close"
+leetspeak.console.decode: "Decode"
+leetspeak.console.reset: "Reset"

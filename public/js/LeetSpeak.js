@@ -47,14 +47,26 @@ document.addEventListener("DOMContentLoaded", () => {
       LeetSpeak.backup.push(el.innerText)
    })
    LeetSpeak.start()
-})
+});
 
 // Change l'état du leetSpeak
 LeetSpeak.toggle = () => {
    LeetSpeak.activated = !LeetSpeak.activated
    localStorage.setItem("leetSpeak-activated", LeetSpeak.activated)
    LeetSpeak.start()
-}
+};
+
+LeetSpeak.activate = () => {
+   if(localStorage.getItem("leetSpeak-activated")==="false") {
+      LeetSpeak.toggle();
+   }
+};
+
+LeetSpeak.disactivate = () => {
+   if(localStorage.getItem("leetSpeak-activated")==="true") {
+      LeetSpeak.toggle();
+   }
+};
 
 // Change dynamiquement le texte en leetSpeak
 LeetSpeak.start = () => {
@@ -79,5 +91,5 @@ LeetSpeak.start = () => {
          texts[i].innerText = LeetSpeak.backup[i]
       }
    }
-}
+};
 
