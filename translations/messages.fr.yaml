@@ -8,10 +8,15 @@ navbar.items.articles: "Articles"
 navbar.items.connexion: "Connexion"
 navbar.items.inscription: "Inscription"
 navbar.items.deconnexion: "Déconnexion"
+
+navbar.items.report.new: "Nouveau rapport"
+navbar.items.report: "Rapports"
+
 navbar.items.amongusrien: "Il n y a rien a voir ici."
 navbar.items.amongusensemble: "Il semblerait que Alfred et Antoine soient souvent ensemble..."
 navbar.items.amongusfils: "Il n y a pas vraiment de fils ici..."
 navbar.items.amongusdauphin: "On dirait que quelqu un se cache proche du dauphin !"
+
 
 home.jumbotron.title: "Surfez plus sereinement !"
 home.jumbotron.description: "Utilisez notre application afin de séléctionner le spot idéal parmis de nombreux disponibles à travers le monde. Participez en ajoutant de nouveaux spots via la carte intéractive. Envoyez des rapports de vos sessions."
@@ -99,8 +104,24 @@ leetspeak.console.close: "Fermer"
 leetspeak.console.decode: "Décoder"
 leetspeak.console.reset: "Réinitialiser"
 
-map.title: "Voici une liste de quelques spot de surf sympas : "
+
+map.title: "Voici une liste de quelques spots de surf sympas : "
 map.subtitle: "N'hésitez pas à ajouter les vôtres !"
+
+report.title: "Rédiger un nouveau rapport"
+report.name: "Nom"
+report.firstname: "Prénom"
+report.place: "Lieu"
+report.tempAir: "Température de l'air"
+report.tempWater: "Température de l'eau"
+report.pollution.title: "Niveau de pollution"
+report.pollution.verylow: "Très basse"
+report.pollution.low: "Basse"
+report.pollution.medium: "Moyenne"
+report.pollution.high: "Haute"
+report.pollution.veryhigh: "Très haute"
+report.validate: "Je confirme l'envoi de mon rapport"
+report.add: "Ajouter"
 
 
 carbon.title: "CO<sub>2</sub> émis pas la page"
@@ -111,3 +132,4 @@ carbon.indicateur.elevee: "Empreinte carbone élevée"
 carbon.indicateur.tres.elevee: "Empreinte carbone très élevée"
 carbon.equivalent: "Équivalent charbon"
 carbon.co2: "CO<sub>2</sub> émis"
+

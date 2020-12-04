@@ -14,5 +14,5 @@ function anim() {
   }
 
   MakeCrewmateMove.changeGame = () => {
-    setTimeout(function () { location.href = "/NuitInfo2020/public/fr/amongUs/emergency" }, 4000);
+    setTimeout(function () { location.href = "/fr/amongUs/emergency" }, 4000);
 }

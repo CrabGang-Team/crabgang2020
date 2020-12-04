@@ -17,7 +17,7 @@ AmongUs.together = () => {
 }
 
 AmongUs.runGame = () => {
-    setTimeout(function () { location.href = "/NuitInfo2020/public/fr/amongus" }, 4500);
+    setTimeout(function () { location.href = "/fr/amongus" }, 4500);
 }
 
 AmongUs.changePage = () => {
@@ -29,7 +29,7 @@ AmongUs.changePage = () => {
     let max = key.length
  
     let change = function () {
-        setTimeout(function () { location.href = "/NuitInfo2020/public/fr/test" }, 1);
+        setTimeout(function () { location.href = "/fr/test" }, 1);
     };
 
     let record = function (e) {

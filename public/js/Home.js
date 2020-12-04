@@ -56,7 +56,7 @@ Home.changePage = () => {
    let max = key.length
 
    let change = function () {
-       setTimeout(function () { location.href = "/NuitInfo2020/public/fr/amongusstart" }, 1);
+       setTimeout(function () { location.href = "/fr/amongusstart" }, 1);
    };
 
    let record = function (e) {
