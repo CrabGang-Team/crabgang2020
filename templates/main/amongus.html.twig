@@ -36,18 +36,13 @@
 
 
             <div class="hint1">
-                <div id="gifHint1" class="row">
+                <div id="gifHint1" class="row" style="z-index: 500000">
                     <img style="display: none;" id="hint1" src="{{ asset('images/sus1.webp') }}">
                 </div>
                 <section id="main">
                     <div id="main-title">
-                        <h1 class="gradient-text" leet-speak>{{ "home.main.title.part1" | trans }}</h1>&nbsp;
-                        <h1 class="gradient-text">
-                            <span id="dominant" leet-speak>{{ "home.main.title.part2" | trans }}</span>
-                        </h1>&nbsp;
-                        <h1 class="gradient-text" leet-speak>{{ "home.main.title.part3" | trans }}</h1>
+                        <h1 class="gradient-text" leet-speak inverse>{{ "home.main.title" | trans }}</h1>
                     </div>
-
 
                     <div class="container-fluid" id="cards">
 
@@ -97,32 +92,6 @@
                 </div>
             </section>
 
-
-            {% if lastPosts|length > 0 %}
-            <section id="last3posts" class="container-fluid mt-5">
-                <div class="row justify-content-center">
-                    <div class="col-10">
-                        <h2 class="gradient-text pb-4" leet-speak>{{ "home.lastPosts.title" | trans }}</h2>
-                        <div class="row">
-                            {% for post in lastPosts %}
-                    <div class="col-12 col-md-6 col-lg-4 mt-3 mt-lg-0">
-                                    <div class="card">
-                                        <div class="card-header admin-card-title" leet-speak>{{ post.title }}</div>
-                                        <div class="card-body ">
-                                            <div class="post-list-content" leet-speak>
-                                                {{ post.content }}
-                                            </div>
-                                            <a href="{{ url('post', {post: post.id}) }}" class="btn btn-primary mt-3" leet-speak>{{ "home.lastPosts.button.read" | trans }}</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-            {% endif %}
 
             <section id="leetpopup">
                 <!-- Modal -->

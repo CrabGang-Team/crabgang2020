@@ -132,7 +132,9 @@ class MainController extends AbstractController
         $reports = $this->getDoctrine()->getRepository(Report::class)->getAllReposts();
         return $this->render('main/reposts.html.twig', [
             "reports" => $reports
-
+        ]);
+    }
+    /**
      * @Route("/amongusstart", name="amongusstart")
      */
     public function amongusstart()
@@ -156,7 +158,7 @@ class MainController extends AbstractController
     }
 
 
-
+    /**
      * @Route("/amongus", name="amongus")
      */
     public function amongus()
