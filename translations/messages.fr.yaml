@@ -8,6 +8,8 @@ navbar.items.articles: "Articles"
 navbar.items.connexion: "Connexion"
 navbar.items.inscription: "Inscription"
 navbar.items.deconnexion: "Déconnexion"
+navbar.items.report.new: "Nouveau rapport"
+navbar.items.report: "Rapports"
 
 home.jumbotron.title: "Crab'Gang : Meilleur solution digitale !"
 home.jumbotron.description: "Amet magna commodo irure do non nostrud pariatur aute. Mollit dolor minim tempor qui dolore sunt mollit adipisicing do dolore.Nisi sit incididunt in ut eu.Consequat tempor cillum minim cillum et eu reprehenderit cillum magna do minim proident commodo."

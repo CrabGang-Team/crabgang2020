@@ -20,18 +20,18 @@
             </div>
          {% endif %}
 
-         <h1 class="text-center" leet-speak>{{ "write.title" | trans }}</h1>
+         <h1 class="text-center" leet-speak inverse>{{ "write.title" | trans }}</h1>
          <form method="POST" action="{{ url('write_article_post') }}" class="mt-4">
             <div class="form-group">
-               <label for="title" leet-speak>{{ "write.input.title" | trans }}</label>
+               <label for="title" leet-speak inverse>{{ "write.input.title" | trans }}</label>
                <input type="text" class="form-control" id="title" maxLength="1000" required autofocus name="title" aria-describedby="titreHelp" placeholder="{{ 'write.input.placeholder.title' | trans }}">
             </div>
             <div class="form-group">
-               <label for="content" leet-speak>{{ "write.input.content" | trans }}</label>
+               <label for="content" leet-speak inverse>{{ "write.input.content" | trans }}</label>
                <textarea class="form-control" id="content" required placeholder="{{ 'write.input.placeholder.content' | trans }}" name="content" style="max-height:500px; height: 200px"></textarea>
             </div>
             <input type="hidden" name="token" value="{{ csrf_token('post-article') }}"/>
-            <button type="submit" class="btn btn-primary" leet-speak>{{ "write.input.button" | trans }}</button>
+            <button type="submit" class="btn btn-primary" leet-speak inverse>{{ "write.input.button" | trans }}</button>
          </form>
       </div>
    </div>

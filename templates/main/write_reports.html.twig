@@ -11,7 +11,7 @@
 {% block body %}
     <div class="container mt-3">
         <h1 class="gradient-text text-center pt-3 mb-5" leet-speak inverse>{{ 'report.title' | trans }}</h1>
-        <form id="formNewReport">
+        <form id="formNewReport" method="POST" action="{{ url('reports_post') }}">
             <div class="form-group row justify-content-center">
                 <div class="col-5">
                     <input type="text" id="name" class="form-control" placeholder="{{ 'report.name' | trans }}" name="name" maxlength="30" required autofocus>
@@ -26,7 +26,7 @@
 
             <div class="form-group row justify-content-center">
                 <div class="col-5">
-                    <input type="date" id="date" class="form-control" required>
+                    <input type="date" id="date" name="date" class="form-control" required>
                 </div>
             </div>
 
@@ -44,13 +44,13 @@
 
             <div class="form-group row justify-content-center">
                 <div class="col-5">
-                    <input type="text" id="tempAir" class="form-control" placeholder="{{ 'report.tempAir' | trans }}" name="tempAir">
+                    <input type="number" id="tempAir" class="form-control" placeholder="{{ 'report.tempAir' | trans }}" name="tempAir">
                 </div>
             </div>
 
             <div class="form-group row justify-content-center">
                 <div class="col-5">
-                    <input type="text" id="tempWater" class="form-control" placeholder="{{ 'report.tempWater' | trans }}" name="tempWater">
+                    <input type="number" id="tempWater" class="form-control" placeholder="{{ 'report.tempWater' | trans }}" name="tempWater">
                 </div>
             </div>
 
@@ -81,13 +81,13 @@
 
             <div class="form-group row justify-content-center">
                 <div class="col-10 text-center">
-                    <input type="checkbox" name="checkVerify" id="checkValidate" required>
+                    <input type="checkbox" name="checkVerify" id="checkValidate" required leet-speak inverse>
                     <label for="checkValidate">{{ 'report.validate' | trans }}</label>
                 </div>
             </div>
 
             <div class="form-group row justify-content-center">
-                <button id="buttonSubmit" type="submit" name="submit" class="btn btn-outline-danger">{{ 'report.add' | trans}}</button>
+                <button id="buttonSubmit" type="submit" name="submit" class="btn gradient text-white" leet-speak inverse>{{ 'report.add' | trans}}</button>
             </div>
         </form>
     </div>

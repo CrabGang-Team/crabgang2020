@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reports{% endblock %}
+
+{% block body %}
+
+	<div class="container-fluid mt-5">
+		<div class="row justify-content-center">
+			<div class="col-10">
+				
+				{% if reports|length > 0 %}
+					{% for key, report in reports %}
+						<div class="card {{ key > 0 ? 'mt-3' : 'mt-4' }}">
+							<div class="card-header">
+								<div class="row">
+									<div class="col-12 col-md-8">
+										<h5 class="admin-card-title" leet-speak>{{ report.nom }} {{ report.prenom }}</h5>
+									</div>
+									<div class="col-12 col-md-4 mt-3 mt-md-0 text-right">
+										<a href="{{ url('report', {report: report.id}) }}" class="btn gradient text-white mr-2" leet-speak>{{ "admin.posts.read" | trans }}</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				{% else %}
+					<h5 class="mt-4" leet-speak>{{ "admin.posts.empty" | trans }}</h5>
+				{% endif %}
+
+
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

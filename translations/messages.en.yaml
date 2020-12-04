@@ -8,6 +8,8 @@ navbar.items.articles: "Posts"
 navbar.items.connexion: "Login"
 navbar.items.inscription: "Register"
 navbar.items.deconnexion: "Logout"
+navbar.items.report.new: "New report"
+navbar.items.report: "Reports"
 
 home.jumbotron.title: "Crab'Gang : Best digital solution !"
 home.jumbotron.description: "Nostrud sunt voluptate cillum veniam velit adipisicing mollit.Ullamco voluptate do id non consectetur commodo sit adipisicing et anim do.Sit occaecat aliqua minim ullamco ad sunt ad.Proident sunt irure culpa nisi ut aute eiusmod Lorem."

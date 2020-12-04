@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Report
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/components/card-info.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-3">
+        <h1 class="gradient-text text-center pt-3 mb-5" leet-speak inverse>{{ 'report.title' | trans }}</h1>
+            <div class="form-group row justify-content-center">
+                <div class="col-5">
+                    <input type="text" id="name" class="form-control" readonly name="name" value="{{ report.nom }}">
+                </div>
+            </div>
+
+            <div class="form-group row justify-content-center">
+                <div class="col-5">
+                    <input type="text" class="form-control" readonly value="{{ report.prenom }}">
+                </div>
+            </div>
+
+            <div class="form-group row justify-content-center">
+                <div class="col-5">
+                    <input type="date" class="form-control" readonly value="{{ report.date | date("Y-m-d") }}">
+                </div>
+            </div>
+
+            <div class="form-group row justify-content-center">
+                <div class="col-5">
+                    <input type="text" readonly class="form-control" value="{{ report.lieu }}">
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <hr />
+                </div>
+            </div>
+
+            <div class="form-group row justify-content-center">
+                <div class="col-5">
+                    <input type="number" readonly class="form-control" value="{{ report.tempAir }}">
+                </div>
+            </div>
+
+            <div class="form-group row justify-content-center">
+                <div class="col-5">
+                    <input type="number" readonly class="form-control" value="{{ report.tempEau }}">
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <hr />
+                </div>
+            </div>
+
+            <div class="form-group row justify-content-center">
+                <div class="col-5">
+                    <input type="text" readonly class="form-control" value="{{ report.pollution }}">
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <hr />
+                </div>
+            </div>
+
+    </div>
+{% endblock %}
+
+
