@@ -90,7 +90,18 @@ class MainController extends AbstractController
         ]);
     }
 
-        /**
+    /**
+     * @Route("/amongusstart", name="amongusstart")
+     */
+    public function amongusstart()
+    {
+        $lastPosts = $this->getDoctrine()->getRepository(Post::class)->getLastThreePosts();
+        return $this->render('main/amongusstart.html.twig', [
+            "lastPosts" => $lastPosts
+        ]);
+    }
+
+    /**
      * @Route("/amongus", name="amongus")
      */
     public function amongus()

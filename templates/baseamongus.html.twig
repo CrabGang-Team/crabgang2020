@@ -33,6 +33,7 @@
 		</head>
 	<body>
 
+		<audio id="player" src="../music/find_dead_body.mp3"></audio>
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark gradient" id="navbar">
 			<span class="navbar-brand mb-0 h1" leet-speak onclick="Base.scrollTop()">Crab'Gang</span>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,19 +42,11 @@
 			<div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
 				<div class="navbar-nav navbar-right ml-auto">
 
-
-					{% if app.user %}
-						<a class="nav-link"  leet-speak>{{ "navbar.items.write" | trans }}</a>
-						<a class="nav-link"  leet-speak>{{ "navbar.items.deconnexion" | trans }}</a>
-					{% else %}
-						<a class="nav-link"  leet-speak>{{ "navbar.items.connexion" | trans }}</a>
-						<a class="nav-link"  leet-speak>{{ "navbar.items.inscription" | trans }}</a>
-					{% endif %}
-
+					<a class="nav-link" onclick="AmongUs.nothinghere()" leet-speak>{{ "navbar.items.connexion" | trans }}</a>
+					<a class="nav-link" onclick="AmongUs.wires()" leet-speak>{{ "navbar.items.inscription" | trans }}</a>
 					<a class="nav-link" leet-speak onclick="Base.changeLocale('{{app.request.locale}}')">{{ app.request.locale == "fr" ? "language.english" | trans : "language.french" | trans }}</a>
-					<a class="nav-link" leet-speak onclick="LeetSpeak.toggle()">LeetSpeak</a>
-					<a class="nav-link" leet-speak href="{{ url('home') }}">{{ "navbar.items.home" | trans }}</a>
-					<a class="nav-link" leet-speak >{{ "navbar.items.articles" | trans }}</a>
+					<a class="nav-link" onclick="AmongUs.together()" leet-speak>{{ "navbar.items.home" | trans }}</a>
+					<a class="nav-link" onclick="AmongUs.dolphin()" leet-speak>{{ "navbar.items.articles" | trans }}</a>
 				</div>
 			</div>
 		</nav>
@@ -74,6 +67,16 @@
 		{# Personal JS #}
 		<script src="{{ asset('js/LeetSpeak.js') }}"></script>
 		<script src="{{ asset('js/Base.js') }}"></script>
+		<script src="{{ asset('js/AmongUs.js') }}"></script>
+		
+		<script>
+		AmongUs.traduction = {
+			nothing: "{{ 'navbar.items.amongusrien' | trans }}",
+			together: "{{ 'navbar.items.amongusensemble' | trans }}",
+			wires: "{{ 'navbar.items.amongusfils' | trans }}",
+			dolphin: "{{ 'navbar.items.amongusdauphin' | trans }}" 
+		}
+		</script>
 		
 		{% block javascripts %}{% endblock %}
 	</body>

@@ -8,6 +8,10 @@ navbar.items.articles: "Articles"
 navbar.items.connexion: "Connexion"
 navbar.items.inscription: "Inscription"
 navbar.items.deconnexion: "Déconnexion"
+navbar.items.amongusrien: "Il n y a rien a voir ici."
+navbar.items.amongusensemble: "Il semblerait que Alfred et Antoine soient souvent ensemble..."
+navbar.items.amongusfils: "Il n y a pas vraiment de fils ici..."
+navbar.items.amongusdauphin: "On dirait que quelqu un se cache proche du dauphin !"
 
 home.jumbotron.title: "Crab'Gang : Meilleur solution digitale !"
 home.jumbotron.description: "Amet magna commodo irure do non nostrud pariatur aute. Mollit dolor minim tempor qui dolore sunt mollit adipisicing do dolore.Nisi sit incididunt in ut eu.Consequat tempor cillum minim cillum et eu reprehenderit cillum magna do minim proident commodo."
@@ -48,7 +52,10 @@ login.button: "Se connecter"
 login.logout: "Se déconnecter"
 login.login.as: "Vous êtes connecté en tant que"
 
-
+amongusstart.title: "Bienvenue sur la page du défi : <b>EMERGENCY MEETING!!</b> de <b>CODDITY</b>"
+amongusstart.h5_part1: "Appuyez sur le bouton 'START' pour commencer."
+amongusstart.h5_part2: "Vous serez alors téléporter vers notre page principale avec... quelques modifications. À vous de mener l'enquête pour déceler l'imposteur qui se trouve parmi nous."
+amongusstart.h5_part3: "BONNE CHANCE !"
 
 inscription.title: "Inscription"
 inscription.username: "Nom d'utilisateur"
