@@ -17,8 +17,8 @@
 
 	<div class="home-jumbotron gradient">
 		<div class="jumbotron-text">
-			<h1 class="big-title px-5" leet-speak>{{ "home.jumbotron.title" | trans }}</h1>
-			<p class="mt-5" leet-speak>{{ "home.jumbotron.description" | trans }}</p>
+			<h1 class="big-title px-5" leet-speak inverse>{{ "home.jumbotron.title" | trans }}</h1>
+			<p class="mt-5" leet-speak inverse>{{ "home.jumbotron.description" | trans }}</p>
 		</div>
 		<div class="mt-5 jumbotron-down-arrow">
 			<h2 class="text-white">
@@ -38,13 +38,8 @@
 
 	<section id="main">
 		<div id="main-title">
-			<h1 class="gradient-text" leet-speak>{{ "home.main.title.part1" | trans }}</h1>&nbsp;
-			<h1 class="gradient-text">
-				<span id="dominant" leet-speak>{{ "home.main.title.part2" | trans }}</span>
-			</h1>&nbsp;
-			<h1 class="gradient-text" leet-speak>{{ "home.main.title.part3" | trans }}</h1>
+			<h1 class="gradient-text" leet-speak inverse>{{ "home.main.title" | trans }}</h1>&nbsp;
 		</div>
-
 
 		<div class="container-fluid" id="cards">
 			<div class="row justify-content-center">
@@ -64,22 +59,22 @@
 		<div id="compteur-dates">
 			<div class="element-date">
 				<div id="jours"></div>
-				<div leet-speak>{{ 'home.compteur.jours' | trans }}</div>
+				<div leet-speak inverse>{{ 'home.compteur.jours' | trans }}</div>
 			</div>
 			<div class="date-divider"></div>
 			<div class="element-date">
 				<div id="heures"></div>
-				<div leet-speak>{{ 'home.compteur.heures' | trans }}</div>
+				<div leet-speak inverse>{{ 'home.compteur.heures' | trans }}</div>
 			</div>
 			<div class="date-divider"></div>
 			<div class="element-date">
 				<div id="minutes"></div>
-				<div leet-speak>{{ 'home.compteur.minutes' | trans }}</div>
+				<div leet-speak inverse>{{ 'home.compteur.minutes' | trans }}</div>
 			</div>
 			<div class="date-divider"></div>
 			<div class="element-date">
 				<div id="secondes"></div>
-				<div leet-speak>{{ 'home.compteur.secondes' | trans }}</div>
+				<div leet-speak inverse>{{ 'home.compteur.secondes' | trans }}</div>
 			</div>
 		</div>
 	</section>
@@ -89,17 +84,17 @@
 	<section id="last3posts" class="container-fluid mt-5">
 		<div class="row justify-content-center">
 			<div class="col-10">
-				<h2 class="gradient-text pb-4" leet-speak>{{ "home.lastPosts.title" | trans }}</h2>
+				<h2 class="gradient-text pb-4" leet-speak inverse>{{ "home.lastPosts.title" | trans }}</h2>
 				<div class="row">
 					{% for post in lastPosts %}
-               <div class="col-12 col-md-6 col-lg-4 mt-3 mt-lg-0">
+               			<div class="col-12 col-md-6 col-lg-4 mt-3 mt-lg-0">
 							<div class="card">
-								<div class="card-header admin-card-title" leet-speak>{{ post.title }}</div>
+								<div class="card-header admin-card-title" leet-speak inverse>{{ post.title }}</div>
 								<div class="card-body ">
-									<div class="post-list-content" leet-speak>
+									<div class="post-list-content" leet-speak inverse>
 										{{ post.content }}
 									</div>
-									<a href="{{ url('post', {post: post.id}) }}" class="btn btn-primary mt-3" leet-speak>{{ "home.lastPosts.button.read" | trans }}</a>
+									<a href="{{ url('post', {post: post.id}) }}" class="btn btn-primary mt-3" leet-speak inverse>{{ "home.lastPosts.button.read" | trans }}</a>
 								</div>
 							</div>
 						</div>
@@ -117,13 +112,13 @@
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title">{{ "leetspeak.console.title" | trans }}</h5>
+						<h5 class="modal-title" leet-speak>{{ "leetspeak.console.title" | trans }}</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
 					<div class="modal-body">
-						<p>
+						<p leet-speak>
 							{{ "leetspeak.console.text" | trans }}
 						</p>
 						<div class="row justify-content-center">
@@ -136,11 +131,11 @@
 								<img id="b" class="konamiInput" src="{{ asset('images/b.png') }}" onClick="Drag.clickKonamiArrow('B')">
 							</div>
 							<div id="konami-input" class="text-center mt-3">
-								<p id="codeSpan"></p>
+								<p id="codeSpan" leet-speak></p>
 								<button class="btn btn-outline-danger" id="buttonResetCodeKonami" onClick="Drag.resetCodeKonami()">{{ 'leetspeak.console.reset' | trans }}</button>
 							</div>
 							<div class="col-12 mt-3">	
-								<span id="tipsSpan"></span>
+								<span id="tipsSpan" leet-speak></span>
 								<button class="btn btn-outline-secondary" id="buttonShowTipsKonami" onClick="Drag.showTipsKonami(this)">{{ 'leetspeak.console.tipsButton' | trans }}</button>
 							</div>
 						</div>

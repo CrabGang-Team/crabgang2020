@@ -34,7 +34,7 @@
 	<body>
 
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark gradient" id="navbar">
-			<span class="navbar-brand mb-0 h1" leet-speak onclick="Base.scrollTop()">Crab'Gang</span>
+			<span class="navbar-brand mb-0 h1" leet-speak inverse onclick="Base.scrollTop()">Crab'Gang</span>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -42,21 +42,22 @@
 				<div class="navbar-nav navbar-right ml-auto">
 
 					{% if is_granted('ROLE_ADMIN') %}
-						<a class="nav-link" href="{{ url('admin_dashboard') }}" leet-speak>{{ "navbar.items.admin" | trans }}</a>
+						<a class="nav-link" href="{{ url('admin_dashboard') }}" leet-speak inverse>{{ "navbar.items.admin" | trans }}</a>
 					{% endif %}
 
 					{% if app.user %}
-						<a class="nav-link" href="{{ url('write_article') }}" leet-speak>{{ "navbar.items.write" | trans }}</a>
-						<a class="nav-link" href="{{ url('app_logout') }}" leet-speak>{{ "navbar.items.deconnexion" | trans }}</a>
+						<a class="nav-link" href="{{ url('write_article') }}" leet-speak inverse>{{ "navbar.items.write" | trans }}</a>
+						<a class="nav-link" href="{{ url('app_logout') }}" leet-speak inverse>{{ "navbar.items.deconnexion" | trans }}</a>
 					{% else %}
-						<a class="nav-link" href="{{ url('app_login') }}" leet-speak>{{ "navbar.items.connexion" | trans }}</a>
-						<a class="nav-link" href="{{ url('app_register') }}" leet-speak>{{ "navbar.items.inscription" | trans }}</a>
+						<a class="nav-link" href="{{ url('app_login') }}" leet-speak inverse>{{ "navbar.items.connexion" | trans }}</a>
+						<a class="nav-link" href="{{ url('app_register') }}" leet-speak inverse>{{ "navbar.items.inscription" | trans }}</a>
 					{% endif %}
 
-					<a class="nav-link" leet-speak onclick="Base.changeLocale('{{app.request.locale}}')">{{ app.request.locale == "fr" ? "language.english" | trans : "language.french" | trans }}</a>
-					<a class="nav-link" leet-speak onclick="LeetSpeak.toggle()">LeetSpeak</a>
-					<a class="nav-link" leet-speak href="{{ url('home') }}">{{ "navbar.items.home" | trans }}</a>
-					<a class="nav-link" leet-speak href="{{ url('posts') }}">{{ "navbar.items.articles" | trans }}</a>
+					<a class="nav-link" leet-speak inverse onclick="Base.changeLocale('{{app.request.locale}}')">{{ app.request.locale == "fr" ? "language.english" | trans : "language.french" | trans }}</a>
+					<a class="nav-link" leet-speak inverse onclick="LeetSpeak.toggle()">LeetSpeak</a>
+					<a class="nav-link" leet-speak inverse onclick="Inverse.toggle()">Inverse</a>
+					<a class="nav-link" leet-speak inverse href="{{ url('home') }}">{{ "navbar.items.home" | trans }}</a>
+					<a class="nav-link" leet-speak inverse href="{{ url('posts') }}">{{ "navbar.items.articles" | trans }}</a>
 				</div>
 			</div>
 		</nav>
@@ -76,6 +77,7 @@
 
 		{# Personal JS #}
 		<script src="{{ asset('js/LeetSpeak.js') }}"></script>
+		<script src="{{ asset('js/Inverse.js') }}"></script>
 		<script src="{{ asset('js/Base.js') }}"></script>
 		
 		{% block javascripts %}{% endblock %}
