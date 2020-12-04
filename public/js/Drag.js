@@ -5,20 +5,20 @@ Drag.listLetters = ["L","R","U","D","A","B"];
 Drag.code = "";
 Drag.userCode = "";
 
-$("#bullet").position.left = 10;
+$("#dolphin").position.left = 10;
 
-$( "#bullet" ).draggable({
+$( "#dolphin" ).draggable({
   axis: "x",
   containment: "#draggablediv",
   cursor: "move",
   //helper: "clone", //Permet de cloner l'objet et de bouger seulement le clone
   drag: function( event, ui ) {
-    $("#bullet").tooltip('hide')
-    if( (ui.position.left > (window.innerWidth-(1.5*document.getElementById("bullet").offsetWidth))) && localStorage.getItem("leetSpeak-activated")==="false") {
-      $('#exampleModal').modal('show');
+    $("#dolphin").tooltip('hide')
+    if( (ui.position.left > (window.innerWidth-(1.5*document.getElementById("dolphin").offsetWidth))) && localStorage.getItem("leetSpeak-activated")==="false") {
+      $('#modalLeet').modal('show');
       return false;
     }
-    else if((ui.position.left < (1.5*document.getElementById("bullet").offsetWidth)) && localStorage.getItem("leetSpeak-activated")==="true") {
+    else if((ui.position.left < (1.5*document.getElementById("dolphin").offsetWidth)) && localStorage.getItem("leetSpeak-activated")==="true") {
       LeetSpeak.disactivate();
       return false;
     }
@@ -32,7 +32,7 @@ Drag.setCode = () => {
 
 Drag.decode = () => {
   if(Drag.userCode == Drag.code) {
-    $('#exampleModal').modal('hide');
+    $('#modalLeet').modal('hide');
     Drag.resetTipsKonami();
     Drag.resetCodeKonami();
     LeetSpeak.activate();
