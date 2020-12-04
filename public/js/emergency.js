@@ -52,6 +52,6 @@ emergencyDiv.alfreddied = () => {
     setTimeout(function () { location.href = "/fr/amongUs/alfreddied" }, 1);
 }
 
-emergencyDiv.robindided = () => {
+emergencyDiv.robindied = () => {
     setTimeout(function () { location.href = "/fr/amongUs/robindied" }, 1);
 }
