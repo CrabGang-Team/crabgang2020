@@ -128,7 +128,7 @@
 		
 		<script>
 			Base.startLoading = Date.now();
-			fetch(document.location.href).then(data => {
+			fetch(document.location.origin + "/fr/rest/pollution/get/{{ app.request.get('_route') }}").then(data => {
 				return Base.endLoading = Date.now()
 			}).then(date => {
 				Base.loadingTime = date - Base.startLoading
@@ -137,19 +137,19 @@
 				let carbon = Base.loadingTime * 0.35 / 800;
 				let empreinte = "";
 				let color = "";
-				if(Base.loadingTime < 900) {
+				if(Base.loadingTime < 400) {
 					left = Math.floor(Math.random() * (20 - 0) + 0);
 					empreinte = "Empreinte très faible";
 					color = "#00a80e";
-				} else if(Base.loadingTime < 1000) {
+				} else if(Base.loadingTime < 500) {
 					left = Math.floor(Math.random() * (40 - 20) + 20);
 					empreinte = "Empreinte faible";
 					color = "#00e467";
-				} else if(Base.loadingTime < 1110) {
+				} else if(Base.loadingTime < 600) {
 					left = Math.floor(Math.random() * (60 - 40) + 40);
 					empreinte = "Empreinte modérée";
 					color = "#e5fd0d";
-				} else if (Base.loadingTime < 1200) {
+				} else if (Base.loadingTime < 700) {
 					left = Math.floor(Math.random() * (80 - 60) + 60);
 					empreinte = "Empreinte élevée";
 					color = "#fa952f";

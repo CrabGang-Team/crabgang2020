@@ -38,7 +38,7 @@
 
 	<section id="main">
 		<div id="main-title">
-			<h1 class="gradient-text" leet-speak inverse>{{ "home.main.title" | trans }}</h1>&nbsp;
+			<h1 class="gradient-text" leet-speak inverse>{{ "home.main.title" | trans }}</h1>
 		</div>
 
 		<div class="container-fluid" id="cards">
@@ -80,9 +80,9 @@
 	</section>
 	
 	<section id="map" class="mt-5">
-		<h4 leet-speak inverse>{{ 'map.title' | trans }}</h4>
+		<h1 class="gradient-text text-center pt-3 mb-5" leet-speak inverse>{{ 'map.title' | trans }}</h1>
 		<iframe frameborder=0 style='width:100%;height:500px' src='//www.zeemaps.com/pub?group=3986055&locate=1&search=1&x=-44.185579&y=23.871298&z=15'></iframe>
-		<p leet-speak inverse>{{ 'map.subtitle' | trans }}</p>
+		<div style="color: grey"><i class="fas fa-info-circle ml-3" style="display: inline"></i><div leet-speak inverse style="display: inline; margin-left: 5px;">{{ 'map.subtitle' | trans }}</div></div>
 	</section>
 
 	{% if lastPosts|length > 0 %}
