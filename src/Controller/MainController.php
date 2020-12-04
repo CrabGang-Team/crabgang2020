@@ -2,8 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\Post;
 use DateTime;
+use App\Entity\Post;
+use App\Entity\Report;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -91,6 +92,47 @@ class MainController extends AbstractController
     }
 
     /**
+
+     * @Route("/report/new", name="reports")
+     */
+    public function reports()
+    {
+        return $this->render('main/write_reports.html.twig');
+    }
+
+    /**
+     * @Route("/report/new/post", name="reports_post", methods={"POST"})
+     */
+    public function reportsPost(Request $request)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $params = $request->request->all();
+        
+        $report = new Report();
+        $report->setNom($params["name"])
+            ->setPrenom($params["firstname"])
+            ->setLieu($params["place"])
+            ->setTempAir($params["tempAir"])
+            ->setTempEau($params["tempWater"])
+            ->setPollution($params["pollution"])
+            ->setDate(new DateTime($params["date"]));
+
+        $entityManager->persist($report);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('reports');
+        
+    }
+
+    /**
+     * @Route("/reports", name="reports_list")
+     */
+    public function reportsList()
+    {
+        $reports = $this->getDoctrine()->getRepository(Report::class)->getAllReposts();
+        return $this->render('main/reposts.html.twig', [
+            "reports" => $reports
+
      * @Route("/amongusstart", name="amongusstart")
      */
     public function amongusstart()
@@ -98,10 +140,23 @@ class MainController extends AbstractController
         $lastPosts = $this->getDoctrine()->getRepository(Post::class)->getLastThreePosts();
         return $this->render('main/amongusstart.html.twig', [
             "lastPosts" => $lastPosts
+
         ]);
     }
 
     /**
+
+     * @Route("/report/{report}", name="report")
+     */
+    public function report(Report $report)
+    {
+        return $this->render('main/repost-full.html.twig', [
+            "report" => $report
+        ]);
+    }
+
+
+
      * @Route("/amongus", name="amongus")
      */
     public function amongus()
@@ -111,6 +166,7 @@ class MainController extends AbstractController
             "lastPosts" => $lastPosts
         ]);
     }
+
 
     /**
      * @Route("/amongUs/emergency", name="emergency_meeting")
