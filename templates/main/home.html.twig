@@ -6,7 +6,7 @@
 
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{ asset('css/components/card-info.css') }}">
-   <link rel="stylesheet" href="{{ asset('css/drag.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/drag.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -27,6 +27,13 @@
 				</a>
 			</h2>
 		</div>
+		<div class="container-fluid mt-4">
+      		<div class="row">
+         		<div id="draggablediv" class="ui-widget-content">
+           			<img id="dolphin" src="{{ asset('images/dolphin.png') }}" data-toggle="tooltip" data-placement="top" title="{{ "leetspeak.dolphin.tooltip" | trans }}">
+         		</div>
+      		</div>
+   		</div>
 	</div>
 
 	<section id="main">
@@ -51,14 +58,6 @@
 			</div>
 		</div>
 	</section>
-
-	<div class="container-fluid">
-      <div class="row">
-         <div id="draggablediv" class="ui-widget-content">
-           <img id="bullet" src="{{ asset('images/dolphin.png') }}">
-         </div>
-      </div>
-   </div>
 
 	<section id="compteur" class="gradient">
 		<p id="title-compteur"></p>
@@ -114,21 +113,41 @@
 
 	<section id="leetpopup">
 		<!-- Modal -->
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="modalLeet" tabindex="-1" role="dialog">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+						<h5 class="modal-title">{{ "leetspeak.console.title" | trans }}</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
 					<div class="modal-body">
-						zizi
+						<p>
+							{{ "leetspeak.console.text" | trans }}
+						</p>
+						<div class="row justify-content-center">
+							<div id="konami-controls" class="col-12 text-center">
+								<img id="left" class="konamiInput" src="{{ asset('images/left.png') }}" onClick="Drag.clickKonamiArrow('L')">
+								<img id="right" class="konamiInput" src="{{ asset('images/right.png') }}" onClick="Drag.clickKonamiArrow('R')">
+								<img id="up" class="konamiInput" src="{{ asset('images/up.png') }}" onClick="Drag.clickKonamiArrow('U')">
+								<img id="down" class="konamiInput" src="{{ asset('images/down.png') }}" onClick="Drag.clickKonamiArrow('D')">
+								<img id="a" class="konamiInput" src="{{ asset('images/a.png') }}" onClick="Drag.clickKonamiArrow('A')">
+								<img id="b" class="konamiInput" src="{{ asset('images/b.png') }}" onClick="Drag.clickKonamiArrow('B')">
+							</div>
+							<div id="konami-input" class="text-center mt-3">
+								<p id="codeSpan"></p>
+								<button class="btn btn-outline-danger" id="buttonResetCodeKonami" onClick="Drag.resetCodeKonami()">{{ 'leetspeak.console.reset' | trans }}</button>
+							</div>
+							<div class="col-12 mt-3">	
+								<span id="tipsSpan"></span>
+								<button class="btn btn-outline-secondary" id="buttonShowTipsKonami" onClick="Drag.showTipsKonami(this)">{{ 'leetspeak.console.tipsButton' | trans }}</button>
+							</div>
+						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
+						<button class="btn gradient text-white" id="buttonDecode" onClick="Drag.decode()">{{ 'leetspeak.console.decode' | trans }}</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="Drag.resetTipsKonami()">{{ 'leetspeak.console.close' | trans}}</button>
 					</div>
 				</div>
 			</div>
@@ -147,6 +166,10 @@
 			avant: "{{ 'home.compteur.avant' | trans }}",
 			pendant: "{{ 'home.compteur.pendant' | trans }}",
 			apres: "{{ 'home.compteur.apres' | trans }}"
+		}
+
+		Drag.translation = {
+			tips: "{{ 'leetspeak.console.tipsText' | trans }}",
 		}
 	</script>
 {% endblock %}
