@@ -123,4 +123,28 @@ class MainController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/amongUs/antoinedied", name="antoinedied")
+     */
+    public function Antoinedied(): Response
+    {
+        return $this->render('amongus/antoinedied.html.twig');
+    }
+
+    /**
+     * @Route("/amongUs/alfreddied", name="alfreddied")
+     */
+    public function Alfreddied(): Response
+    {
+        return $this->render('amongus/alfreddied.html.twig');
+    }    
+
+    /**
+     * @Route("/amongUs/robindied", name="robindied")
+     */
+    public function Robindied(): Response
+    {
+        return $this->render('amongus/robindied.html.twig');
+    }    
+
 }

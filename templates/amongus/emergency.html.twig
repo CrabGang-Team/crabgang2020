@@ -50,22 +50,22 @@
             <img src="{{ asset('images/Lime.png') }}" style="width:100%;heigth:100%; object-fit:cover"/>
             </div>
             
-            <button id="button_Ant"  type=submit style="display:none;width:3%;position: absolute;z-index:5000;left:41%;top:38%">
-                <img src="{{ asset('images/voteYES.png') }}" style="width:100%;heigth:100%; object-fit:cover"/>
+            <button id="button_Ant" type=submit style="display:none;width:3%;position: absolute;z-index:5000;left:41%;top:36.8%">
+                <img src="{{ asset('images/voteYES.png') }}" style="width:100%;heigth:100%; object-fit:cover" onclick="emergencyDiv.antoinedied()"/>
             </button>
-            <button id="button_Alf" type=submit style="display:none; width:3%;position: absolute;z-index:5000;left:62%;top:38%">
-                <img src="{{ asset('images/voteYES.png') }}" style="width:100%;heigth:100%; object-fit:cover"/>
+            <button id="button_Alf" type=submit style="display:none; width:3%;position: absolute;z-index:5000;left:62%;top:36.8%">
+                <img src="{{ asset('images/voteYES.png') }}" style="width:100%;heigth:100%; object-fit:cover" onclick="emergencyDiv.alfreddied()"/>
             </button>
-            <button id="button_Rob" type=submit style="display:none; width:3%;position: absolute;z-index:5000;left:62%;top:29.2%">
-                <img src="{{ asset('images/voteYES.png') }}" style="width:100%;heigth:100%; object-fit:cover"/>
+            <button id="button_Rob" type=submit style="display:none; width:3%;position: absolute;z-index:5000;left:62%;top:28.3%">
+                <img src="{{ asset('images/voteYES.png') }}" style="width:100%;heigth:100%; object-fit:cover" onclick="emergencyDiv.robindied()"/>
             </button>
-            <button id="button_AntNO"  onClick="emergencyDiv.StopAnt()" style="display:none;width:3%;position: absolute;z-index:5000;left:44.2%;top:38%">
+            <button id="button_AntNO" onClick="emergencyDiv.StopAnt()" style="display:none;width:3%;position: absolute;z-index:5000;left:44.2%;top:36.9%">
                 <img src="{{ asset('images/voteNO.png') }}" style="width:100%;heigth:100%; object-fit:cover"/>
             </button>
-            <button id="button_AlfNO" onClick="emergencyDiv.StopAlf()" style="display:none; width:3%;position: absolute;z-index:5000;left:65.2%;top:38%">
+            <button id="button_AlfNO" onClick="emergencyDiv.StopAlf()" style="display:none; width:3%;position: absolute;z-index:5000;left:65.2%;top:36.9%">
                 <img src="{{ asset('images/voteNO.png') }}" style="width:100%;heigth:100%; object-fit:cover"/>
             </button>
-            <button id="button_RobNO" onClick="emergencyDiv.StopRob()" style="display:none; width:3%;position: absolute;z-index:5000;left:65.2%;top:29.2%">
+            <button id="button_RobNO" onClick="emergencyDiv.StopRob()" style="display:none; width:3%;position: absolute;z-index:5000;left:65.2%;top:28.4%">
                 <img src="{{ asset('images/voteNO.png') }}" style="width:100%;heigth:100%; object-fit:cover"/>
             </button>
         </div>

@@ -43,3 +43,15 @@ emergencyDiv.StopRob = () => {
     $("#button_Rob").hide();
     $("#button_RobNO").hide();
 }
+
+emergencyDiv.antoinedied = () => {
+    setTimeout(function () { location.href = "/fr/amongUs/antoinedied" }, 1);
+}
+
+emergencyDiv.alfreddied = () => {
+    setTimeout(function () { location.href = "/fr/amongUs/alfreddied" }, 1);
+}
+
+emergencyDiv.robindided = () => {
+    setTimeout(function () { location.href = "/fr/amongUs/robindied" }, 1);
+}
