@@ -138,15 +138,26 @@
    font-weight: 600;
 }
 
-
 /* ? Popup carbon */
 .carbon-container {
    position: fixed;
    bottom: 8px;
    left: 8px;
    width: 500px;
-   height: 250px;
    padding: 20px 30px;
+   background-color: white;
+   z-index: 10;
+   border-radius: 5px;
+   border: 2px solid rgb(240, 240, 240);
+   box-shadow: 0px 0px 8px rgba(0,0,0,0.4);
+}
+
+.carbon-container-minimal {
+   position: fixed;
+   bottom: 8px;
+   left: 8px;
+   width: 130px;
+   padding: 10px 15px;
    background-color: white;
    z-index: 10;
    border-radius: 5px;
@@ -160,6 +171,93 @@
    align-items: center;
 }
 
+#carbon-jauge {
+   width: 100%;
+   height: 50px;
+   display: flex;
+   justify-content: space-between;
+   margin-top: 20px;
+}
+
+#carbon-jauge .carbon-couleur {
+   width: calc(100% / 5.3);
+   height: 5px;
+}
+
+#carbon-jauge .carbon-couleur:nth-child(1){
+   background-color: #00a80e;
+}
+#carbon-jauge .carbon-couleur:nth-child(2){
+   background-color: #00e467;
+}
+#carbon-jauge .carbon-couleur:nth-child(3){
+   background-color: #e5fd0d;
+}
+#carbon-jauge .carbon-couleur:nth-child(4){
+   background-color: #fa952f;
+}
+#carbon-jauge .carbon-couleur:nth-child(5){
+   background-color: #ec190c;
+}
+
+.carbon-marker {
+   position: relative;
+   width: 100%;
+   height: 10px;
+}
+
+.carbon-marker span {
+   position: absolute;
+   transform: translateX(-50%);
+   /* left: position par rapport à la gauche */
+}
+
+.carbon-indicateur {
+   color: grey;
+   font-size: 15px;
+}
+
+#carbon-values {
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+}
+/* #carbon-values-minimal {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+} */
+
+#carbon-ticket, #carbon-ticket-minimal {
+   width: 15px;
+   height: 15px;
+   border-radius: 50px;
+}
+
+#carbon-value, #carbon-coal, #value-carbon-minimal {
+   font-size: 18px;
+   font-weight: 600;
+}
+
+.carbon-element {
+   display: inline-block;
+}
+
+#carbon-emis-title, #charbon-emis-title {
+   font-size: 20px;
+   font-weight: normal;
+}
+
+
+.inner-carbon {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.maximize {
+   font-size: 20px;
+}
 
 /* ! Admin */
 /* ? Users list */
