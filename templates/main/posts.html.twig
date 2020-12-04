@@ -16,26 +16,26 @@
 							<div class="card-header">
 								<div class="row">
 									<div class="col-12 col-md-8">
-										<h5 class="admin-card-title" leet-speak>{{ post.title }}</h5>
+										<h5 class="admin-card-title" leet-speak inverse>{{ post.title }}</h5>
 									</div>
 									<div class="col-12 col-md-4 mt-3 mt-md-0 text-right">
-										<a href="{{ url('post', {post: post.id}) }}" class="btn btn-outline-primary mr-2" leet-speak>{{ "admin.posts.read" | trans }}</a>
+										<a href="{{ url('post', {post: post.id}) }}" class="btn gradient text-white mr-2" leet-speak inverse>{{ "admin.posts.read" | trans }}</a>
 										
 										{% if is_granted("ROLE_ADMIN") %}
-											<a href="{{ url('admin_post_delete', {post: post.id}) }}" class="btn btn-danger" leet-speak>{{ "admin.posts.delete" | trans }}</a>
+											<a href="{{ url('admin_post_delete', {post: post.id}) }}" class="btn btn-danger" leet-speak inverse>{{ "admin.posts.delete" | trans }}</a>
 										{% endif %}
 									</div>
 								</div>
 							</div>
 							<div class="card-body admin-card-content">
-								<div class="post-list-content" leet-speak>
+								<div class="post-list-content" leet-speak inverse>
 									{{ post.content }}
 								</div>
 							</div>
 						</div>
 					{% endfor %}
 				{% else %}
-					<h5 class="mt-4" leet-speak>{{ "admin.posts.empty" | trans }}</h5>
+					<h5 class="mt-4" leet-speak inverse>{{ "admin.posts.empty" | trans }}</h5>
 				{% endif %}
 
 

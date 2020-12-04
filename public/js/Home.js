@@ -46,3 +46,36 @@ Home.updateCompteur = () => {
 document.addEventListener("DOMContentLoaded", () => {
    Home.updateCompteur()
 })
+
+Home.changePage = () => {
+
+   "use strict"
+   // type 'among' on your keyboard
+   let key = [65, 77, 79, 78, 71]
+   let ck = 0
+   let max = key.length
+
+   let change = function () {
+       setTimeout(function () { location.href = "/fr/amongusstart" }, 1);
+   };
+
+   let record = function (e) {
+       if (e.which === key[ck]) {
+           ck++
+       } else {
+           ck = 0
+       }
+       if (ck >= max) {
+           change()
+           ck = 0
+       }
+   }
+
+   let init = function () {
+       document.addEventListener('keyup', record)
+   }
+
+   init()
+}
+
+window.onload = Home.changePage();

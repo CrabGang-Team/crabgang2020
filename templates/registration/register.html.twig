@@ -14,20 +14,20 @@
         {{ form_start(registrationForm, {
             attr: {class: "col-10 col-sm-8 col-md-6 col-lg-5 col-xl-4"}
         }) }}
-            <h1 class="h3 mb-3 font-weight-normal" leet-speak>{{ "inscription.title" | trans }}</h1>
+            <h1 class="h3 mb-3 font-weight-normal" leet-speak inverse>{{ "inscription.title" | trans }}</h1>
   
             {{ form_row(registrationForm.username, {
                 label: "inscription.username" | trans,
                 attr: {class: "form-control mb-3"},
-                label_attr: {"leet-speak": ""}
+                label_attr: {"leet-speak": "", "inverse": ""}
             }) }}
             {{ form_row(registrationForm.plainPassword, {
                 label: "inscription.password" | trans,
                 attr: {class: "form-control"},
-                label_attr: {"leet-speak": ""}
+                label_attr: {"leet-speak": "", "inverse": ""}
             }) }}
 
-            <button type="submit" class="btn btn-lg btn-primary mt-3" leet-speak>{{ "inscription.button" | trans }}</button>
+            <button type="submit" class="btn btn-lg gradient text-white mt-3" leet-speak inverse>{{ "inscription.button" | trans }}</button>
         {{ form_end(registrationForm) }}
 
     </div>

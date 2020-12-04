@@ -43,6 +43,7 @@
 
 					{% if is_granted('ROLE_ADMIN') %}
 						<a class="nav-link" href="{{ url('admin_dashboard') }}" leet-speak inverse>{{ "navbar.items.admin" | trans }}</a>
+						<a class="nav-link" leet-speak inverse onclick="LeetSpeak.toggle()">LeetSpeak</a>
 					{% endif %}
 
 					{% if app.user %}
@@ -54,7 +55,6 @@
 					{% endif %}
 
 					<a class="nav-link" leet-speak inverse onclick="Base.changeLocale('{{app.request.locale}}')">{{ app.request.locale == "fr" ? "language.english" | trans : "language.french" | trans }}</a>
-					<a class="nav-link" leet-speak inverse onclick="LeetSpeak.toggle()">LeetSpeak</a>
 					<a class="nav-link" leet-speak inverse onclick="Inverse.toggle()">Inverse</a>
 					<a class="nav-link" leet-speak inverse href="{{ url('home') }}">{{ "navbar.items.home" | trans }}</a>
 					<a class="nav-link" leet-speak inverse href="{{ url('posts') }}">{{ "navbar.items.articles" | trans }}</a>
@@ -69,7 +69,7 @@
 
 			<div class="carbon-container" style="display: none" id="carbon-container">
 				<div class="carbon-title">
-					<h5>CO<sub>2</sub> émis par la page</h5>
+					<h5 leet-speak inverse>{{ "carbon.title" | trans | raw }}</h5>
 					<h3 id="carbon-minimize" onclick="Base.minimizeCarbon()">&minus;</h3>
 				</div>
 
@@ -88,14 +88,14 @@
 
 				<div id="carbon-values">
 					<div id="carbon-value">
-						<div id="carbon-emis-title">CO<sub>2</sub> émis</div>
+						<div id="carbon-emis-title" leet-speak inverse>{{ "carbon.co2" | trans | raw }}</div>
 						<div class="text-center mt-2">
 							<div class="carbon-element" id="value-carbon"></div>
 							<div id="carbon-ticket" class="carbon-element"></div>
 						</div>
 					</div>
 					<div id="carbon-coal">
-						<div id="charbon-emis-title">Équivalent charbon</div>
+						<div id="charbon-emis-title" leet-speak inverse>{{ "carbon.equivalent" | trans }}</div>
 						<div class="text-center mt-2">
 							<div class="carbon-element" id="value-coal"></div>
 						</div>
@@ -129,6 +129,15 @@
 		<script src="{{ asset('js/Base.js') }}"></script>
 		
 		<script>
+
+			Base.traduction = {
+				tresFaible: "{{ 'carbon.indicateur.tres.faible' | trans }}",
+				faible: "{{ 'carbon.indicateur.faible' | trans }}",
+				moderee: "{{ 'carbon.indicateur.moderee' | trans }}",
+				elevee: "{{ 'carbon.indicateur.elevee' | trans }}",
+				tresElevee: "{{ 'carbon.indicateur.tres.elevee' | trans }}",
+			}
+
 			Base.startLoading = Date.now();
 			fetch(document.location.origin + "/fr/rest/pollution/get/{{ app.request.get('_route') }}").then(data => {
 				return Base.endLoading = Date.now()
@@ -140,23 +149,23 @@
 				let color = "";
 				if(Base.loadingTime < 400) {
 					left = Math.floor(Math.random() * (20 - 0) + 0);
-					empreinte = "Empreinte très faible";
+					empreinte = Base.traduction.tresFaible;
 					color = "#00a80e";
 				} else if(Base.loadingTime < 500) {
 					left = Math.floor(Math.random() * (40 - 20) + 20);
-					empreinte = "Empreinte faible";
+					empreinte = Base.traduction.faible;
 					color = "#00e467";
 				} else if(Base.loadingTime < 600) {
 					left = Math.floor(Math.random() * (60 - 40) + 40);
-					empreinte = "Empreinte modérée";
+					empreinte = Base.traduction.moderee;
 					color = "#e5fd0d";
 				} else if (Base.loadingTime < 700) {
 					left = Math.floor(Math.random() * (80 - 60) + 60);
-					empreinte = "Empreinte élevée";
+					empreinte = Base.traduction.elevee;
 					color = "#fa952f";
 				} else {
 					left = Math.floor(Math.random() * (100 - 80) + 80);
-					empreinte = "Empreinte très élevée";
+					empreinte = Base.traduction.tresElevee;
 					color = "#ec190c";
 				}
 				document.getElementById("empreinte-explanation").innerHTML=empreinte;

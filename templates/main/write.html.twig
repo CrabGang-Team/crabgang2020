@@ -12,7 +12,7 @@
       <div class="col-11 col-sm-10 col-md-8 col-lg-7 col-xl-6">
 
          {% if app.request.get('error') is defined and app.request.get('error') == 'csrf-token' %}
-            <div class="alert alert-danger alert-dismissible fade show" role="alert" leet-speak>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" leet-speak inverse>
                {{ "error.form.csrf" | trans }}
                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
@@ -31,7 +31,7 @@
                <textarea class="form-control" id="content" required placeholder="{{ 'write.input.placeholder.content' | trans }}" name="content" style="max-height:500px; height: 200px"></textarea>
             </div>
             <input type="hidden" name="token" value="{{ csrf_token('post-article') }}"/>
-            <button type="submit" class="btn btn-primary" leet-speak inverse>{{ "write.input.button" | trans }}</button>
+            <button type="submit" class="btn gradient text-white" leet-speak inverse>{{ "write.input.button" | trans }}</button>
          </form>
       </div>
    </div>
