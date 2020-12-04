@@ -62,8 +62,55 @@
 			</div>
 		</nav>
 
-		<div style="padding-top: 56px" class="pb-5">
+		<div style="padding-top: 56px;" class="pb-5">
 			{% block body %}{% endblock %}
+
+			<div class="carbon-container" style="display: none" id="carbon-container">
+				<div class="carbon-title">
+					<h5>CO<sub>2</sub> émis par la page</h5>
+					<h3 id="carbon-minimize" onclick="Base.minimizeCarbon()">&minus;</h3>
+				</div>
+
+				<div class="mb-3 carbon-indicateur" id="empreinte-explanation">&nbsp;</div>
+
+				<div class="carbon-marker">
+					<span id="carbon-triangle">&#9660;</span>
+				</div>
+				<div id="carbon-jauge">
+					<div class="carbon-couleur"></div>
+					<div class="carbon-couleur"></div>
+					<div class="carbon-couleur"></div>
+					<div class="carbon-couleur"></div>
+					<div class="carbon-couleur"></div>
+				</div>
+
+				<div id="carbon-values">
+					<div id="carbon-value">
+						<div id="carbon-emis-title">CO<sub>2</sub> émis</div>
+						<div class="text-center mt-2">
+							<div class="carbon-element" id="value-carbon"></div>
+							<div id="carbon-ticket" class="carbon-element"></div>
+						</div>
+					</div>
+					<div id="carbon-coal">
+						<div id="charbon-emis-title">Équivalent charbon</div>
+						<div class="text-center mt-2">
+							<div class="carbon-element" id="value-coal"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="carbon-container-minimal" id="carbon-container-minimal">
+				<div class="inner-carbon" >
+					<div class="text-center mt-2">
+						<div id="value-carbon-minimal" class="carbon-element">&nbsp;</div>
+						<div id="carbon-ticket-minimal" class="carbon-element">&nbsp;</div>
+					</div>
+					<div class="maximize" id="carbon-minimize" onclick="Base.maximizeCarbon()">&plus;</div>			
+				</div>
+			</div>
+
 		</div>
 
 		{# JQuery #}
@@ -74,12 +121,66 @@
 		{# Bootstrap JS #}
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
-
 		{# Personal JS #}
 		<script src="{{ asset('js/LeetSpeak.js') }}"></script>
 		<script src="{{ asset('js/Inverse.js') }}"></script>
 		<script src="{{ asset('js/Base.js') }}"></script>
 		
+		<script>
+			Base.startLoading = Date.now();
+			fetch(document.location.href).then(data => {
+				return Base.endLoading = Date.now()
+			}).then(date => {
+				Base.loadingTime = date - Base.startLoading
+				console.log(Base.loadingTime);
+				let left = 0;
+				let carbon = Base.loadingTime * 0.35 / 800;
+				let empreinte = "";
+				let color = "";
+				if(Base.loadingTime < 900) {
+					left = Math.floor(Math.random() * (20 - 0) + 0);
+					empreinte = "Empreinte très faible";
+					color = "#00a80e";
+				} else if(Base.loadingTime < 1000) {
+					left = Math.floor(Math.random() * (40 - 20) + 20);
+					empreinte = "Empreinte faible";
+					color = "#00e467";
+				} else if(Base.loadingTime < 1110) {
+					left = Math.floor(Math.random() * (60 - 40) + 40);
+					empreinte = "Empreinte modérée";
+					color = "#e5fd0d";
+				} else if (Base.loadingTime < 1200) {
+					left = Math.floor(Math.random() * (80 - 60) + 60);
+					empreinte = "Empreinte élevée";
+					color = "#fa952f";
+				} else {
+					left = Math.floor(Math.random() * (100 - 80) + 80);
+					empreinte = "Empreinte très élevée";
+					color = "#ec190c";
+				}
+				document.getElementById("empreinte-explanation").innerHTML=empreinte;
+				document.getElementById("carbon-triangle").style.left = `${left}%`;
+
+				document.getElementById("value-carbon").innerHTML = `${carbon.toFixed(2)}g`
+				document.getElementById("value-carbon-minimal").innerHTML = `${carbon.toFixed(2)}g`
+
+				document.getElementById("value-coal").innerHTML = `${(carbon*0.973).toFixed(2)}g`
+				
+				document.getElementById("carbon-ticket").style.backgroundColor = color;
+				document.getElementById("carbon-ticket-minimal").style.backgroundColor = color;
+
+			})
+
+			Base.maximizeCarbon = () => {
+				document.getElementById("carbon-container-minimal").style.display = "none"
+				document.getElementById("carbon-container").style.display = "inline"
+			}
+			Base.minimizeCarbon = () => {
+				document.getElementById("carbon-container-minimal").style.display = "inline"
+				document.getElementById("carbon-container").style.display = "none"
+			}
+		</script>
+
 		{% block javascripts %}{% endblock %}
 	</body>
 </html>
