@@ -92,3 +92,13 @@ leetspeak.console.reset: "Reset"
 
 map.title: "Here you can find a list of great spots: "
 map.subtitle: "Do not hesitate to add yours!"
+
+
+carbon.title: "Webpage CO<sub>2</sub> emission"
+carbon.indicateur.tres.faible: "Very low carbon footprint"
+carbon.indicateur.faible: "Low carbon footprint"
+carbon.indicateur.moderee: "Moderate carbon footprint"
+carbon.indicateur.elevee: "High carbon footprint"
+carbon.indicateur.tres.elevee: "Very high carbon footprint"
+carbon.equivalent: "Coal equivalent"
+carbon.co2: "CO<sub>2</sub> emission"

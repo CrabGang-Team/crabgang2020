@@ -94,3 +94,13 @@ leetspeak.console.reset: "Réinitialiser"
 
 map.title: "Voici une liste de quelques spot de surf sympas : "
 map.subtitle: "N'hésitez pas à ajouter les vôtres !"
+
+
+carbon.title: "CO<sub>2</sub> émis pas la page"
+carbon.indicateur.tres.faible: "Empreinte carbone très faible"
+carbon.indicateur.faible: "Empreinte carbone faible"
+carbon.indicateur.moderee: "Empreinte carbone modérée"
+carbon.indicateur.elevee: "Empreinte carbone élevée"
+carbon.indicateur.tres.elevee: "Empreinte carbone très élevée"
+carbon.equivalent: "Équivalent charbon"
+carbon.co2: "CO<sub>2</sub> émis"
