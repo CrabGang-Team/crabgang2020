@@ -90,6 +90,49 @@ class MainController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/amongusstart", name="amongusstart")
+     */
+    public function amongusstart()
+    {
+        $lastPosts = $this->getDoctrine()->getRepository(Post::class)->getLastThreePosts();
+        return $this->render('main/amongusstart.html.twig', [
+            "lastPosts" => $lastPosts
+        ]);
+    }
 
+    /**
+     * @Route("/amongus", name="amongus")
+     */
+    public function amongus()
+    {
+        $lastPosts = $this->getDoctrine()->getRepository(Post::class)->getLastThreePosts();
+        return $this->render('main/amongus.html.twig', [
+            "lastPosts" => $lastPosts
+        ]);
+    }
+
+
+     /**
+     * @Route("/amongUs", name="among_us")
+     */
+    public function amongUs(): Response
+    {
+        $lastPosts = $this->getDoctrine()->getRepository(Post::class)->getLastThreePosts();
+        return $this->render('amongus/among.html.twig', [
+            "lastPosts" => $lastPosts
+        ]);
+    }
+
+    /**
+     * @Route("/amongUs/emergency", name="emergency_meeting")
+     */
+    public function Emergency(): Response
+    {
+        //$lastPosts = $this->getDoctrine()->getRepository(Post::class)->getLastThreePosts();
+        return $this->render('amongus/emergency.html.twig', [
+            //"lastPosts" => $lastPosts
+        ]);
+    }
 
 }

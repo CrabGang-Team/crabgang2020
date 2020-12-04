@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ "navbar.items.home" | trans }}
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/components/card-info.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/drag.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/amongusstart.css') }}">
+{% endblock %}
+
+{% block body %}
+    <br>
+    <h1 class="gradient-text">{{ 'amongusstart.title' | trans | raw }}</h1>
+    <br>
+    <h5 style="text-align: center;">{{ 'amongusstart.h5_part1' | trans }}</h5>
+    <br>
+    <h5 style="text-align: center;">{{ 'amongusstart.h5_part2' | trans }}</h5>
+    <br>
+    <h5 style="text-align: center;">{{ 'amongusstart.h5_part3' | trans }}</h5>
+    <br>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="button gradient" id="button-3">
+                <div id="circle"></div>
+                <audio id="player" src="../music/among-us-roundstart.mp3"></audio>
+                <a onclick="document.getElementById('player').play(); AmongUs.runGame()">START</a>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('js/Home.js') }}"></script>
+	<script src="{{ asset('js/Drag.js') }}"></script>
+    <script src="{{ asset('js/AmongUs.js') }}"></script>
+
+
+	<script>
+		AmongUsStart.traduction = {
+			title: "{{ 'amongusstart.title' | trans }}",
+			h5_part1: "{{ 'amongusstart.h5_part1' | trans }}",
+			h5_part2: "{{ 'amongusstart.h5_part2' | trans }}"
+            h5_part3: "{{ 'amongusstart.h5_part3' | trans }}"
+		}
+	</script>
+{% endblock %}
+
