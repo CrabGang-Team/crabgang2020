@@ -90,6 +90,14 @@ class MainController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/report/new", name="reports")
+     */
+    public function reports()
+    {
+        return $this->render('main/write_reports.html.twig');
+    }
+
 
 
 }
