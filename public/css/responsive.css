@@ -45,3 +45,18 @@
       font-size: 18px;
    }
 }
+
+/* ? Popup carbon */
+@media screen and (max-width: 600px) {
+   .carbon-container {
+      width: calc(100% - 16px);
+   }
+   #carbon-emis-title, #charbon-emis-title {
+      font-size: 16px;
+   } 
+}
+@media screen and (max-width: 400px) {
+   #carbon-emis-title, #charbon-emis-title {
+      font-size: 14px;
+   } 
+}

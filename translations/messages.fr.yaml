@@ -91,3 +91,6 @@ leetspeak.console.tipsButton: "Indice"
 leetspeak.console.close: "Fermer"
 leetspeak.console.decode: "Décoder"
 leetspeak.console.reset: "Réinitialiser"
+
+map.title: "Voici une liste de quelques spot de surf sympas : "
+map.subtitle: "N'hésitez pas à ajouter les vôtres !"
