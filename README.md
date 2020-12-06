@@ -3,7 +3,7 @@ Projet pour la nuit de l'info 2020
 
 # Informations importantes :warning:
 
-Nous tenons à vous tenir informé que sotre serveur sur lequel nous avons hébergé notre application web a été victime d'une **attaque UDP**. Il est donc hors-service pour une durée indéterminée. Néanmoins, pour rendre possible la correction de certains défis de la nuit de l'info 2020, nous avons mis à votre disposition une nouvelle **[url](http://crabgang.alwaysdata.net/fr/)** sur laquelle vous retrouverez la même application.
+Nous tenons à vous tenir informé que notre serveur, sur lequel nous avons hébergé notre application web, a été victime d'une **attaque UDP**. Il est donc hors-service pour une durée indéterminée. Néanmoins, pour rendre possible la correction de certains défis de la nuit de l'info 2020, nous avons mis à votre disposition une nouvelle **[url](http://crabgang.alwaysdata.net/fr/)** sur laquelle vous retrouverez la même application.
 Merci de votre compréhension.
 
 L'équipe *Crab'Gang*
